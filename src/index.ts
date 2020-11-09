@@ -7,6 +7,36 @@
 
 // -------------------------------------------------------------------------- //
 
+import * as MetricClient from "./pbf/metric/ApiServiceClientPb";
+import * as MetricCreate from "./pbf/metric/create_pb";
+import * as MetricDelete from "./pbf/metric/delete_pb";
+import * as MetricSearch from "./pbf/metric/search_pb";
+import * as MetricUpdate from "./pbf/metric/update_pb";
+
+export const Metric = {
+  Client: MetricClient.APIClient,
+  Create: {
+    I: MetricCreate.CreateI,
+    O: MetricCreate.CreateO,
+  },
+  Delete: {
+    I: MetricDelete.DeleteI,
+    O: MetricDelete.DeleteO,
+  },
+  Search: {
+    I: MetricSearch.SearchI,
+    O: MetricSearch.SearchO,
+  },
+  Update: {
+    I: MetricUpdate.UpdateI,
+    O: MetricUpdate.UpdateO,
+  },
+};
+
+// -------------------------------------------------------------------------- //
+
+// -------------------------------------------------------------------------- //
+
 import * as UpdateClient from "./pbf/update/ApiServiceClientPb";
 import * as UpdateCreate from "./pbf/update/create_pb";
 import * as UpdateDelete from "./pbf/update/delete_pb";
@@ -30,36 +60,6 @@ export const Update = {
   Update: {
     I: UpdateUpdate.UpdateI,
     O: UpdateUpdate.UpdateO,
-  },
-};
-
-// -------------------------------------------------------------------------- //
-
-// -------------------------------------------------------------------------- //
-
-import * as UserClient from "./pbf/user/ApiServiceClientPb";
-import * as UserCreate from "./pbf/user/create_pb";
-import * as UserDelete from "./pbf/user/delete_pb";
-import * as UserSearch from "./pbf/user/search_pb";
-import * as UserUpdate from "./pbf/user/update_pb";
-
-export const User = {
-  Client: UserClient.APIClient,
-  Create: {
-    I: UserCreate.CreateI,
-    O: UserCreate.CreateO,
-  },
-  Delete: {
-    I: UserDelete.DeleteI,
-    O: UserDelete.DeleteO,
-  },
-  Search: {
-    I: UserSearch.SearchI,
-    O: UserSearch.SearchO,
-  },
-  Update: {
-    I: UserUpdate.UpdateI,
-    O: UserUpdate.UpdateO,
   },
 };
 

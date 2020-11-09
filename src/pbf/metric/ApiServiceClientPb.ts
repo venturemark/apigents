@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for api
+ * @fileoverview gRPC-Web generated client stub for metric
  * @enhanceable
  * @public
  */
@@ -63,7 +63,7 @@ export class APIClient {
   ) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
-        this.hostname_ + "/api.API/Create",
+        this.hostname_ + "/metric.API/Create",
         request,
         metadata || {},
         this.methodInfoCreate,
@@ -71,7 +71,7 @@ export class APIClient {
       );
     }
     return this.client_.unaryCall(
-      this.hostname_ + "/api.API/Create",
+      this.hostname_ + "/metric.API/Create",
       request,
       metadata || {},
       this.methodInfoCreate
@@ -104,7 +104,7 @@ export class APIClient {
   ) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
-        this.hostname_ + "/api.API/Delete",
+        this.hostname_ + "/metric.API/Delete",
         request,
         metadata || {},
         this.methodInfoDelete,
@@ -112,7 +112,7 @@ export class APIClient {
       );
     }
     return this.client_.unaryCall(
-      this.hostname_ + "/api.API/Delete",
+      this.hostname_ + "/metric.API/Delete",
       request,
       metadata || {},
       this.methodInfoDelete
@@ -145,7 +145,7 @@ export class APIClient {
   ) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
-        this.hostname_ + "/api.API/Search",
+        this.hostname_ + "/metric.API/Search",
         request,
         metadata || {},
         this.methodInfoSearch,
@@ -153,7 +153,7 @@ export class APIClient {
       );
     }
     return this.client_.unaryCall(
-      this.hostname_ + "/api.API/Search",
+      this.hostname_ + "/metric.API/Search",
       request,
       metadata || {},
       this.methodInfoSearch
@@ -186,7 +186,7 @@ export class APIClient {
   ) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
-        this.hostname_ + "/api.API/Update",
+        this.hostname_ + "/metric.API/Update",
         request,
         metadata || {},
         this.methodInfoUpdate,
@@ -194,7 +194,7 @@ export class APIClient {
       );
     }
     return this.client_.unaryCall(
-      this.hostname_ + "/api.API/Update",
+      this.hostname_ + "/metric.API/Update",
       request,
       metadata || {},
       this.methodInfoUpdate
