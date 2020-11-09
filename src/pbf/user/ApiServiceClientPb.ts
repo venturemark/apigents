@@ -6,31 +6,30 @@
 
 // GENERATED CODE -- DO NOT EDIT!
 
-
 /* eslint-disable */
 // @ts-nocheck
 
+import * as grpcWeb from "grpc-web";
 
-import * as grpcWeb from 'grpc-web';
-
-import * as create_pb from './create_pb';
-import * as delete_pb from './delete_pb';
-import * as search_pb from './search_pb';
-import * as update_pb from './update_pb';
-
+import * as create_pb from "./create_pb";
+import * as delete_pb from "./delete_pb";
+import * as search_pb from "./search_pb";
+import * as update_pb from "./update_pb";
 
 export class APIClient {
   client_: grpcWeb.AbstractClientBase;
   hostname_: string;
-  credentials_: null | { [index: string]: string; };
-  options_: null | { [index: string]: any; };
+  credentials_: null | { [index: string]: string };
+  options_: null | { [index: string]: any };
 
-  constructor (hostname: string,
-               credentials?: null | { [index: string]: string; },
-               options?: null | { [index: string]: any; }) {
+  constructor(
+    hostname: string,
+    credentials?: null | { [index: string]: string },
+    options?: null | { [index: string]: any }
+  ) {
     if (!options) options = {};
     if (!credentials) credentials = {};
-    options['format'] = 'text';
+    options["format"] = "text";
 
     this.client_ = new grpcWeb.GrpcWebClientBase(options);
     this.hostname_ = hostname;
@@ -48,34 +47,35 @@ export class APIClient {
 
   create(
     request: create_pb.CreateI,
-    metadata: grpcWeb.Metadata | null): Promise<create_pb.CreateO>;
+    metadata: grpcWeb.Metadata | null
+  ): Promise<create_pb.CreateO>;
 
   create(
     request: create_pb.CreateI,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: create_pb.CreateO) => void): grpcWeb.ClientReadableStream<create_pb.CreateO>;
+    callback: (err: grpcWeb.Error, response: create_pb.CreateO) => void
+  ): grpcWeb.ClientReadableStream<create_pb.CreateO>;
 
   create(
     request: create_pb.CreateI,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
-               response: create_pb.CreateO) => void) {
+    callback?: (err: grpcWeb.Error, response: create_pb.CreateO) => void
+  ) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
-        this.hostname_ +
-          '/api.API/Create',
+        this.hostname_ + "/api.API/Create",
         request,
         metadata || {},
         this.methodInfoCreate,
-        callback);
+        callback
+      );
     }
     return this.client_.unaryCall(
-    this.hostname_ +
-      '/api.API/Create',
-    request,
-    metadata || {},
-    this.methodInfoCreate);
+      this.hostname_ + "/api.API/Create",
+      request,
+      metadata || {},
+      this.methodInfoCreate
+    );
   }
 
   methodInfoDelete = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -88,34 +88,35 @@ export class APIClient {
 
   delete(
     request: delete_pb.DeleteI,
-    metadata: grpcWeb.Metadata | null): Promise<delete_pb.DeleteO>;
+    metadata: grpcWeb.Metadata | null
+  ): Promise<delete_pb.DeleteO>;
 
   delete(
     request: delete_pb.DeleteI,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: delete_pb.DeleteO) => void): grpcWeb.ClientReadableStream<delete_pb.DeleteO>;
+    callback: (err: grpcWeb.Error, response: delete_pb.DeleteO) => void
+  ): grpcWeb.ClientReadableStream<delete_pb.DeleteO>;
 
   delete(
     request: delete_pb.DeleteI,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
-               response: delete_pb.DeleteO) => void) {
+    callback?: (err: grpcWeb.Error, response: delete_pb.DeleteO) => void
+  ) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
-        this.hostname_ +
-          '/api.API/Delete',
+        this.hostname_ + "/api.API/Delete",
         request,
         metadata || {},
         this.methodInfoDelete,
-        callback);
+        callback
+      );
     }
     return this.client_.unaryCall(
-    this.hostname_ +
-      '/api.API/Delete',
-    request,
-    metadata || {},
-    this.methodInfoDelete);
+      this.hostname_ + "/api.API/Delete",
+      request,
+      metadata || {},
+      this.methodInfoDelete
+    );
   }
 
   methodInfoSearch = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -128,34 +129,35 @@ export class APIClient {
 
   search(
     request: search_pb.SearchI,
-    metadata: grpcWeb.Metadata | null): Promise<search_pb.SearchO>;
+    metadata: grpcWeb.Metadata | null
+  ): Promise<search_pb.SearchO>;
 
   search(
     request: search_pb.SearchI,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: search_pb.SearchO) => void): grpcWeb.ClientReadableStream<search_pb.SearchO>;
+    callback: (err: grpcWeb.Error, response: search_pb.SearchO) => void
+  ): grpcWeb.ClientReadableStream<search_pb.SearchO>;
 
   search(
     request: search_pb.SearchI,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
-               response: search_pb.SearchO) => void) {
+    callback?: (err: grpcWeb.Error, response: search_pb.SearchO) => void
+  ) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
-        this.hostname_ +
-          '/api.API/Search',
+        this.hostname_ + "/api.API/Search",
         request,
         metadata || {},
         this.methodInfoSearch,
-        callback);
+        callback
+      );
     }
     return this.client_.unaryCall(
-    this.hostname_ +
-      '/api.API/Search',
-    request,
-    metadata || {},
-    this.methodInfoSearch);
+      this.hostname_ + "/api.API/Search",
+      request,
+      metadata || {},
+      this.methodInfoSearch
+    );
   }
 
   methodInfoUpdate = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -168,35 +170,34 @@ export class APIClient {
 
   update(
     request: update_pb.UpdateI,
-    metadata: grpcWeb.Metadata | null): Promise<update_pb.UpdateO>;
+    metadata: grpcWeb.Metadata | null
+  ): Promise<update_pb.UpdateO>;
 
   update(
     request: update_pb.UpdateI,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: update_pb.UpdateO) => void): grpcWeb.ClientReadableStream<update_pb.UpdateO>;
+    callback: (err: grpcWeb.Error, response: update_pb.UpdateO) => void
+  ): grpcWeb.ClientReadableStream<update_pb.UpdateO>;
 
   update(
     request: update_pb.UpdateI,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
-               response: update_pb.UpdateO) => void) {
+    callback?: (err: grpcWeb.Error, response: update_pb.UpdateO) => void
+  ) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
-        this.hostname_ +
-          '/api.API/Update',
+        this.hostname_ + "/api.API/Update",
         request,
         metadata || {},
         this.methodInfoUpdate,
-        callback);
+        callback
+      );
     }
     return this.client_.unaryCall(
-    this.hostname_ +
-      '/api.API/Update',
-    request,
-    metadata || {},
-    this.methodInfoUpdate);
+      this.hostname_ + "/api.API/Update",
+      request,
+      metadata || {},
+      this.methodInfoUpdate
+    );
   }
-
 }
-
