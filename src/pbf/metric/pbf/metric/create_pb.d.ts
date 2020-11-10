@@ -1,8 +1,19 @@
 import * as jspb from "google-protobuf";
 
 export class CreateI extends jspb.Message {
-  getName(): string;
-  setName(value: string): CreateI;
+  getDatapointList(): Array<number>;
+  setDatapointList(value: Array<number>): CreateI;
+  clearDatapointList(): CreateI;
+  addDatapoint(value: number, index?: number): CreateI;
+
+  getMetricId(): string;
+  setMetricId(value: string): CreateI;
+
+  getTimestamp(): string;
+  setTimestamp(value: string): CreateI;
+
+  getUpdateId(): string;
+  setUpdateId(value: string): CreateI;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateI.AsObject;
@@ -20,14 +31,14 @@ export class CreateI extends jspb.Message {
 
 export namespace CreateI {
   export type AsObject = {
-    name: string;
+    datapointList: Array<number>;
+    metricId: string;
+    timestamp: string;
+    updateId: string;
   };
 }
 
 export class CreateO extends jspb.Message {
-  getMessage(): string;
-  setMessage(value: string): CreateO;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateO.AsObject;
   static toObject(includeInstance: boolean, msg: CreateO): CreateO.AsObject;
@@ -43,7 +54,5 @@ export class CreateO extends jspb.Message {
 }
 
 export namespace CreateO {
-  export type AsObject = {
-    message: string;
-  };
+  export type AsObject = {};
 }
