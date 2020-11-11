@@ -97,9 +97,6 @@ export namespace SearchI {
     }
 
     export class Property extends jspb.Message {
-      getMetricId(): string;
-      setMetricId(value: string): Property;
-
       getTimestamp(): string;
       setTimestamp(value: string): Property;
 
@@ -125,7 +122,6 @@ export namespace SearchI {
 
     export namespace Property {
       export type AsObject = {
-        metricId: string;
         timestamp: string;
         updateId: string;
       };
@@ -227,9 +223,6 @@ export namespace SearchO {
     clearDatapointList(): Result;
     addDatapoint(value: number, index?: number): Result;
 
-    getMetricId(): string;
-    setMetricId(value: string): Result;
-
     getTimestamp(): string;
     setTimestamp(value: string): Result;
 
@@ -253,7 +246,6 @@ export namespace SearchO {
   export namespace Result {
     export type AsObject = {
       datapointList: Array<number>;
-      metricId: string;
       timestamp: string;
       updateId: string;
     };

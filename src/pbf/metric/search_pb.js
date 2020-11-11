@@ -642,7 +642,6 @@ proto.metric.SearchI.Filter.Property.prototype.toObject = function(opt_includeIn
  */
 proto.metric.SearchI.Filter.Property.toObject = function(includeInstance, msg) {
   var f, obj = {
-    metricId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     timestamp: jspb.Message.getFieldWithDefault(msg, 2, ""),
     updateId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
@@ -681,10 +680,6 @@ proto.metric.SearchI.Filter.Property.deserializeBinaryFromReader = function(msg,
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMetricId(value);
-      break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setTimestamp(value);
@@ -722,13 +717,6 @@ proto.metric.SearchI.Filter.Property.prototype.serializeBinary = function() {
  */
 proto.metric.SearchI.Filter.Property.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMetricId();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
   f = message.getTimestamp();
   if (f.length > 0) {
     writer.writeString(
@@ -743,24 +731,6 @@ proto.metric.SearchI.Filter.Property.serializeBinaryToWriter = function(message,
       f
     );
   }
-};
-
-
-/**
- * optional string metric_id = 1;
- * @return {string}
- */
-proto.metric.SearchI.Filter.Property.prototype.getMetricId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.metric.SearchI.Filter.Property} returns this
- */
-proto.metric.SearchI.Filter.Property.prototype.setMetricId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1428,7 +1398,6 @@ proto.metric.SearchO.Result.prototype.toObject = function(opt_includeInstance) {
 proto.metric.SearchO.Result.toObject = function(includeInstance, msg) {
   var f, obj = {
     datapointList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    metricId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     timestamp: jspb.Message.getFieldWithDefault(msg, 3, ""),
     updateId: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
@@ -1471,10 +1440,6 @@ proto.metric.SearchO.Result.deserializeBinaryFromReader = function(msg, reader) 
       var value = /** @type {!Array<number>} */ (reader.readPackedInt64());
       msg.setDatapointList(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMetricId(value);
-      break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setTimestamp(value);
@@ -1516,13 +1481,6 @@ proto.metric.SearchO.Result.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writePackedInt64(
       1,
-      f
-    );
-  }
-  f = message.getMetricId();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
       f
     );
   }
@@ -1577,24 +1535,6 @@ proto.metric.SearchO.Result.prototype.addDatapoint = function(value, opt_index) 
  */
 proto.metric.SearchO.Result.prototype.clearDatapointList = function() {
   return this.setDatapointList([]);
-};
-
-
-/**
- * optional string metric_id = 2;
- * @return {string}
- */
-proto.metric.SearchO.Result.prototype.getMetricId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.metric.SearchO.Result} returns this
- */
-proto.metric.SearchO.Result.prototype.setMetricId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

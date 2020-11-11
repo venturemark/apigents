@@ -6,12 +6,6 @@ export class CreateI extends jspb.Message {
   clearDatapointList(): CreateI;
   addDatapoint(value: number, index?: number): CreateI;
 
-  getMetricId(): string;
-  setMetricId(value: string): CreateI;
-
-  getTimestamp(): string;
-  setTimestamp(value: string): CreateI;
-
   getUpdateId(): string;
   setUpdateId(value: string): CreateI;
 
@@ -32,13 +26,14 @@ export class CreateI extends jspb.Message {
 export namespace CreateI {
   export type AsObject = {
     datapointList: Array<number>;
-    metricId: string;
-    timestamp: string;
     updateId: string;
   };
 }
 
 export class CreateO extends jspb.Message {
+  getTimestamp(): string;
+  setTimestamp(value: string): CreateO;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateO.AsObject;
   static toObject(includeInstance: boolean, msg: CreateO): CreateO.AsObject;
@@ -54,5 +49,7 @@ export class CreateO extends jspb.Message {
 }
 
 export namespace CreateO {
-  export type AsObject = {};
+  export type AsObject = {
+    timestamp: string;
+  };
 }

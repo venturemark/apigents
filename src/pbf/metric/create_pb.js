@@ -96,9 +96,7 @@ proto.metric.CreateI.prototype.toObject = function(opt_includeInstance) {
 proto.metric.CreateI.toObject = function(includeInstance, msg) {
   var f, obj = {
     datapointList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    metricId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    timestamp: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    updateId: jspb.Message.getFieldWithDefault(msg, 4, "")
+    updateId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -141,14 +139,6 @@ proto.metric.CreateI.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMetricId(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setTimestamp(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
       msg.setUpdateId(value);
       break;
     default:
@@ -187,24 +177,10 @@ proto.metric.CreateI.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getMetricId();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getTimestamp();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
   f = message.getUpdateId();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      2,
       f
     );
   }
@@ -249,10 +225,10 @@ proto.metric.CreateI.prototype.clearDatapointList = function() {
 
 
 /**
- * optional string metric_id = 2;
+ * optional string update_id = 2;
  * @return {string}
  */
-proto.metric.CreateI.prototype.getMetricId = function() {
+proto.metric.CreateI.prototype.getUpdateId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -261,44 +237,8 @@ proto.metric.CreateI.prototype.getMetricId = function() {
  * @param {string} value
  * @return {!proto.metric.CreateI} returns this
  */
-proto.metric.CreateI.prototype.setMetricId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string timestamp = 3;
- * @return {string}
- */
-proto.metric.CreateI.prototype.getTimestamp = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.metric.CreateI} returns this
- */
-proto.metric.CreateI.prototype.setTimestamp = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string update_id = 4;
- * @return {string}
- */
-proto.metric.CreateI.prototype.getUpdateId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.metric.CreateI} returns this
- */
 proto.metric.CreateI.prototype.setUpdateId = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -334,7 +274,7 @@ proto.metric.CreateO.prototype.toObject = function(opt_includeInstance) {
  */
 proto.metric.CreateO.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    timestamp: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -371,6 +311,10 @@ proto.metric.CreateO.deserializeBinaryFromReader = function(msg, reader) {
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTimestamp(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -400,6 +344,31 @@ proto.metric.CreateO.prototype.serializeBinary = function() {
  */
 proto.metric.CreateO.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getTimestamp();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string timestamp = 1;
+ * @return {string}
+ */
+proto.metric.CreateO.prototype.getTimestamp = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.metric.CreateO} returns this
+ */
+proto.metric.CreateO.prototype.setTimestamp = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
