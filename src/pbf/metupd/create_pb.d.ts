@@ -1,10 +1,10 @@
 import * as jspb from "google-protobuf";
 
 export class CreateI extends jspb.Message {
-  getDatapointList(): Array<number>;
-  setDatapointList(value: Array<number>): CreateI;
-  clearDatapointList(): CreateI;
-  addDatapoint(value: number, index?: number): CreateI;
+  getYaxisList(): Array<number>;
+  setYaxisList(value: Array<number>): CreateI;
+  clearYaxisList(): CreateI;
+  addYaxis(value: number, index?: number): CreateI;
 
   getText(): string;
   setText(value: string): CreateI;
@@ -28,7 +28,7 @@ export class CreateI extends jspb.Message {
 
 export namespace CreateI {
   export type AsObject = {
-    datapointList: Array<number>;
+    yaxisList: Array<number>;
     text: string;
     timeline: string;
   };

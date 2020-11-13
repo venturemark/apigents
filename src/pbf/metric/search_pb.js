@@ -1405,7 +1405,7 @@ proto.metric.SearchO.Result.prototype.toObject = function(opt_includeInstance) {
  */
 proto.metric.SearchO.Result.toObject = function(includeInstance, msg) {
   var f, obj = {
-    datapointList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+    yaxisList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
     timeline: jspb.Message.getFieldWithDefault(msg, 3, ""),
     timestamp: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
@@ -1446,7 +1446,7 @@ proto.metric.SearchO.Result.deserializeBinaryFromReader = function(msg, reader) 
     switch (field) {
     case 1:
       var value = /** @type {!Array<number>} */ (reader.readPackedInt64());
-      msg.setDatapointList(value);
+      msg.setYaxisList(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -1485,7 +1485,7 @@ proto.metric.SearchO.Result.prototype.serializeBinary = function() {
  */
 proto.metric.SearchO.Result.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getDatapointList();
+  f = message.getYaxisList();
   if (f.length > 0) {
     writer.writePackedInt64(
       1,
@@ -1510,10 +1510,10 @@ proto.metric.SearchO.Result.serializeBinaryToWriter = function(message, writer) 
 
 
 /**
- * repeated int64 datapoint = 1;
+ * repeated int64 yaxis = 1;
  * @return {!Array<number>}
  */
-proto.metric.SearchO.Result.prototype.getDatapointList = function() {
+proto.metric.SearchO.Result.prototype.getYaxisList = function() {
   return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
@@ -1522,7 +1522,7 @@ proto.metric.SearchO.Result.prototype.getDatapointList = function() {
  * @param {!Array<number>} value
  * @return {!proto.metric.SearchO.Result} returns this
  */
-proto.metric.SearchO.Result.prototype.setDatapointList = function(value) {
+proto.metric.SearchO.Result.prototype.setYaxisList = function(value) {
   return jspb.Message.setField(this, 1, value || []);
 };
 
@@ -1532,7 +1532,7 @@ proto.metric.SearchO.Result.prototype.setDatapointList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.metric.SearchO.Result} returns this
  */
-proto.metric.SearchO.Result.prototype.addDatapoint = function(value, opt_index) {
+proto.metric.SearchO.Result.prototype.addYaxis = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
 };
 
@@ -1541,8 +1541,8 @@ proto.metric.SearchO.Result.prototype.addDatapoint = function(value, opt_index) 
  * Clears the list making it empty but non-null.
  * @return {!proto.metric.SearchO.Result} returns this
  */
-proto.metric.SearchO.Result.prototype.clearDatapointList = function() {
-  return this.setDatapointList([]);
+proto.metric.SearchO.Result.prototype.clearYaxisList = function() {
+  return this.setYaxisList([]);
 };
 
 

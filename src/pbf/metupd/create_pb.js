@@ -95,7 +95,7 @@ proto.metupd.CreateI.prototype.toObject = function(opt_includeInstance) {
  */
 proto.metupd.CreateI.toObject = function(includeInstance, msg) {
   var f, obj = {
-    datapointList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+    yaxisList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
     text: jspb.Message.getFieldWithDefault(msg, 2, ""),
     timeline: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
@@ -136,7 +136,7 @@ proto.metupd.CreateI.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {!Array<number>} */ (reader.readPackedInt64());
-      msg.setDatapointList(value);
+      msg.setYaxisList(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -175,7 +175,7 @@ proto.metupd.CreateI.prototype.serializeBinary = function() {
  */
 proto.metupd.CreateI.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getDatapointList();
+  f = message.getYaxisList();
   if (f.length > 0) {
     writer.writePackedInt64(
       1,
@@ -200,10 +200,10 @@ proto.metupd.CreateI.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * repeated int64 datapoint = 1;
+ * repeated int64 yaxis = 1;
  * @return {!Array<number>}
  */
-proto.metupd.CreateI.prototype.getDatapointList = function() {
+proto.metupd.CreateI.prototype.getYaxisList = function() {
   return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
@@ -212,7 +212,7 @@ proto.metupd.CreateI.prototype.getDatapointList = function() {
  * @param {!Array<number>} value
  * @return {!proto.metupd.CreateI} returns this
  */
-proto.metupd.CreateI.prototype.setDatapointList = function(value) {
+proto.metupd.CreateI.prototype.setYaxisList = function(value) {
   return jspb.Message.setField(this, 1, value || []);
 };
 
@@ -222,7 +222,7 @@ proto.metupd.CreateI.prototype.setDatapointList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.metupd.CreateI} returns this
  */
-proto.metupd.CreateI.prototype.addDatapoint = function(value, opt_index) {
+proto.metupd.CreateI.prototype.addYaxis = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
 };
 
@@ -231,8 +231,8 @@ proto.metupd.CreateI.prototype.addDatapoint = function(value, opt_index) {
  * Clears the list making it empty but non-null.
  * @return {!proto.metupd.CreateI} returns this
  */
-proto.metupd.CreateI.prototype.clearDatapointList = function() {
-  return this.setDatapointList([]);
+proto.metupd.CreateI.prototype.clearYaxisList = function() {
+  return this.setYaxisList([]);
 };
 
 

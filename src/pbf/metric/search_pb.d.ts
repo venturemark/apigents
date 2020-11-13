@@ -218,10 +218,10 @@ export namespace SearchO {
   }
 
   export class Result extends jspb.Message {
-    getDatapointList(): Array<number>;
-    setDatapointList(value: Array<number>): Result;
-    clearDatapointList(): Result;
-    addDatapoint(value: number, index?: number): Result;
+    getYaxisList(): Array<number>;
+    setYaxisList(value: Array<number>): Result;
+    clearYaxisList(): Result;
+    addYaxis(value: number, index?: number): Result;
 
     getTimeline(): string;
     setTimeline(value: string): Result;
@@ -245,7 +245,7 @@ export namespace SearchO {
 
   export namespace Result {
     export type AsObject = {
-      datapointList: Array<number>;
+      yaxisList: Array<number>;
       timeline: string;
       timestamp: number;
     };
