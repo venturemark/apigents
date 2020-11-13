@@ -88,7 +88,7 @@ proto.update.DeleteI.prototype.toObject = function(opt_includeInstance) {
  */
 proto.update.DeleteI.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+
   };
 
   if (includeInstance) {
@@ -125,10 +125,6 @@ proto.update.DeleteI.deserializeBinaryFromReader = function(msg, reader) {
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -158,31 +154,6 @@ proto.update.DeleteI.prototype.serializeBinary = function() {
  */
 proto.update.DeleteI.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string name = 1;
- * @return {string}
- */
-proto.update.DeleteI.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.update.DeleteI} returns this
- */
-proto.update.DeleteI.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -218,7 +189,7 @@ proto.update.DeleteO.prototype.toObject = function(opt_includeInstance) {
  */
 proto.update.DeleteO.toObject = function(includeInstance, msg) {
   var f, obj = {
-    message: jspb.Message.getFieldWithDefault(msg, 1, "")
+
   };
 
   if (includeInstance) {
@@ -255,10 +226,6 @@ proto.update.DeleteO.deserializeBinaryFromReader = function(msg, reader) {
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMessage(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -288,31 +255,6 @@ proto.update.DeleteO.prototype.serializeBinary = function() {
  */
 proto.update.DeleteO.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMessage();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string message = 1;
- * @return {string}
- */
-proto.update.DeleteO.prototype.getMessage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.update.DeleteO} returns this
- */
-proto.update.DeleteO.prototype.setMessage = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

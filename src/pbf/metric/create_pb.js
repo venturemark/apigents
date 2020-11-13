@@ -25,7 +25,7 @@ goog.exportSymbol('proto.metric.CreateO', null, global);
  * @constructor
  */
 proto.metric.CreateI = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.metric.CreateI.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.metric.CreateI, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -56,13 +56,6 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.metric.CreateO.displayName = 'proto.metric.CreateO';
 }
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.metric.CreateI.repeatedFields_ = [1];
 
 
 
@@ -95,8 +88,7 @@ proto.metric.CreateI.prototype.toObject = function(opt_includeInstance) {
  */
 proto.metric.CreateI.toObject = function(includeInstance, msg) {
   var f, obj = {
-    datapointList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    updateId: jspb.Message.getFieldWithDefault(msg, 2, "")
+
   };
 
   if (includeInstance) {
@@ -133,14 +125,6 @@ proto.metric.CreateI.deserializeBinaryFromReader = function(msg, reader) {
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {!Array<number>} */ (reader.readPackedInt64());
-      msg.setDatapointList(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setUpdateId(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -170,75 +154,6 @@ proto.metric.CreateI.prototype.serializeBinary = function() {
  */
 proto.metric.CreateI.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getDatapointList();
-  if (f.length > 0) {
-    writer.writePackedInt64(
-      1,
-      f
-    );
-  }
-  f = message.getUpdateId();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-};
-
-
-/**
- * repeated int64 datapoint = 1;
- * @return {!Array<number>}
- */
-proto.metric.CreateI.prototype.getDatapointList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
-};
-
-
-/**
- * @param {!Array<number>} value
- * @return {!proto.metric.CreateI} returns this
- */
-proto.metric.CreateI.prototype.setDatapointList = function(value) {
-  return jspb.Message.setField(this, 1, value || []);
-};
-
-
-/**
- * @param {number} value
- * @param {number=} opt_index
- * @return {!proto.metric.CreateI} returns this
- */
-proto.metric.CreateI.prototype.addDatapoint = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.metric.CreateI} returns this
- */
-proto.metric.CreateI.prototype.clearDatapointList = function() {
-  return this.setDatapointList([]);
-};
-
-
-/**
- * optional string update_id = 2;
- * @return {string}
- */
-proto.metric.CreateI.prototype.getUpdateId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.metric.CreateI} returns this
- */
-proto.metric.CreateI.prototype.setUpdateId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -274,7 +189,7 @@ proto.metric.CreateO.prototype.toObject = function(opt_includeInstance) {
  */
 proto.metric.CreateO.toObject = function(includeInstance, msg) {
   var f, obj = {
-    timestamp: jspb.Message.getFieldWithDefault(msg, 1, "")
+
   };
 
   if (includeInstance) {
@@ -311,10 +226,6 @@ proto.metric.CreateO.deserializeBinaryFromReader = function(msg, reader) {
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setTimestamp(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -344,31 +255,6 @@ proto.metric.CreateO.prototype.serializeBinary = function() {
  */
 proto.metric.CreateO.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTimestamp();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string timestamp = 1;
- * @return {string}
- */
-proto.metric.CreateO.prototype.getTimestamp = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.metric.CreateO} returns this
- */
-proto.metric.CreateO.prototype.setTimestamp = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

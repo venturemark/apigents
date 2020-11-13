@@ -115,7 +115,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.metric.SearchO = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.metric.SearchO.repeatedFields_, null);
 };
 goog.inherits(proto.metric.SearchO, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -642,8 +642,8 @@ proto.metric.SearchI.Filter.Property.prototype.toObject = function(opt_includeIn
  */
 proto.metric.SearchI.Filter.Property.toObject = function(includeInstance, msg) {
   var f, obj = {
-    timestamp: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    updateId: jspb.Message.getFieldWithDefault(msg, 3, "")
+    timeline: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    timestamp: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -680,13 +680,13 @@ proto.metric.SearchI.Filter.Property.deserializeBinaryFromReader = function(msg,
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTimeline(value);
+      break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setTimestamp(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setUpdateId(value);
       break;
     default:
       reader.skipField();
@@ -717,6 +717,13 @@ proto.metric.SearchI.Filter.Property.prototype.serializeBinary = function() {
  */
 proto.metric.SearchI.Filter.Property.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getTimeline();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
   f = message.getTimestamp();
   if (f.length > 0) {
     writer.writeString(
@@ -724,13 +731,24 @@ proto.metric.SearchI.Filter.Property.serializeBinaryToWriter = function(message,
       f
     );
   }
-  f = message.getUpdateId();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
+};
+
+
+/**
+ * optional string timeline = 1;
+ * @return {string}
+ */
+proto.metric.SearchI.Filter.Property.prototype.getTimeline = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.metric.SearchI.Filter.Property} returns this
+ */
+proto.metric.SearchI.Filter.Property.prototype.setTimeline = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -749,24 +767,6 @@ proto.metric.SearchI.Filter.Property.prototype.getTimestamp = function() {
  */
 proto.metric.SearchI.Filter.Property.prototype.setTimestamp = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string update_id = 3;
- * @return {string}
- */
-proto.metric.SearchI.Filter.Property.prototype.getUpdateId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.metric.SearchI.Filter.Property} returns this
- */
-proto.metric.SearchI.Filter.Property.prototype.setUpdateId = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -920,6 +920,13 @@ proto.metric.SearchI.prototype.hasFilter = function() {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.metric.SearchO.repeatedFields_ = [2];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -952,7 +959,8 @@ proto.metric.SearchO.prototype.toObject = function(opt_includeInstance) {
 proto.metric.SearchO.toObject = function(includeInstance, msg) {
   var f, obj = {
     filter: (f = msg.getFilter()) && proto.metric.SearchO.Filter.toObject(includeInstance, f),
-    result: (f = msg.getResult()) && proto.metric.SearchO.Result.toObject(includeInstance, f)
+    resultList: jspb.Message.toObjectList(msg.getResultList(),
+    proto.metric.SearchO.Result.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -997,7 +1005,7 @@ proto.metric.SearchO.deserializeBinaryFromReader = function(msg, reader) {
     case 2:
       var value = new proto.metric.SearchO.Result;
       reader.readMessage(value,proto.metric.SearchO.Result.deserializeBinaryFromReader);
-      msg.setResult(value);
+      msg.addResult(value);
       break;
     default:
       reader.skipField();
@@ -1036,9 +1044,9 @@ proto.metric.SearchO.serializeBinaryToWriter = function(message, writer) {
       proto.metric.SearchO.Filter.serializeBinaryToWriter
     );
   }
-  f = message.getResult();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getResultList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       2,
       f,
       proto.metric.SearchO.Result.serializeBinaryToWriter
@@ -1398,8 +1406,8 @@ proto.metric.SearchO.Result.prototype.toObject = function(opt_includeInstance) {
 proto.metric.SearchO.Result.toObject = function(includeInstance, msg) {
   var f, obj = {
     datapointList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    timestamp: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    updateId: jspb.Message.getFieldWithDefault(msg, 4, "")
+    timeline: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    timestamp: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -1442,11 +1450,11 @@ proto.metric.SearchO.Result.deserializeBinaryFromReader = function(msg, reader) 
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTimestamp(value);
+      msg.setTimeline(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setUpdateId(value);
+      msg.setTimestamp(value);
       break;
     default:
       reader.skipField();
@@ -1484,14 +1492,14 @@ proto.metric.SearchO.Result.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
-  f = message.getTimestamp();
+  f = message.getTimeline();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getUpdateId();
+  f = message.getTimestamp();
   if (f.length > 0) {
     writer.writeString(
       4,
@@ -1539,10 +1547,10 @@ proto.metric.SearchO.Result.prototype.clearDatapointList = function() {
 
 
 /**
- * optional string timestamp = 3;
+ * optional string timeline = 3;
  * @return {string}
  */
-proto.metric.SearchO.Result.prototype.getTimestamp = function() {
+proto.metric.SearchO.Result.prototype.getTimeline = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -1551,16 +1559,16 @@ proto.metric.SearchO.Result.prototype.getTimestamp = function() {
  * @param {string} value
  * @return {!proto.metric.SearchO.Result} returns this
  */
-proto.metric.SearchO.Result.prototype.setTimestamp = function(value) {
+proto.metric.SearchO.Result.prototype.setTimeline = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string update_id = 4;
+ * optional string timestamp = 4;
  * @return {string}
  */
-proto.metric.SearchO.Result.prototype.getUpdateId = function() {
+proto.metric.SearchO.Result.prototype.getTimestamp = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -1569,7 +1577,7 @@ proto.metric.SearchO.Result.prototype.getUpdateId = function() {
  * @param {string} value
  * @return {!proto.metric.SearchO.Result} returns this
  */
-proto.metric.SearchO.Result.prototype.setUpdateId = function(value) {
+proto.metric.SearchO.Result.prototype.setTimestamp = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
@@ -1612,39 +1620,40 @@ proto.metric.SearchO.prototype.hasFilter = function() {
 
 
 /**
- * optional Result result = 2;
- * @return {?proto.metric.SearchO.Result}
+ * repeated Result result = 2;
+ * @return {!Array<!proto.metric.SearchO.Result>}
  */
-proto.metric.SearchO.prototype.getResult = function() {
-  return /** @type{?proto.metric.SearchO.Result} */ (
-    jspb.Message.getWrapperField(this, proto.metric.SearchO.Result, 2));
+proto.metric.SearchO.prototype.getResultList = function() {
+  return /** @type{!Array<!proto.metric.SearchO.Result>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.metric.SearchO.Result, 2));
 };
 
 
 /**
- * @param {?proto.metric.SearchO.Result|undefined} value
+ * @param {!Array<!proto.metric.SearchO.Result>} value
  * @return {!proto.metric.SearchO} returns this
 */
-proto.metric.SearchO.prototype.setResult = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+proto.metric.SearchO.prototype.setResultList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.metric.SearchO.Result=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.metric.SearchO.Result}
+ */
+proto.metric.SearchO.prototype.addResult = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.metric.SearchO.Result, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.metric.SearchO} returns this
  */
-proto.metric.SearchO.prototype.clearResult = function() {
-  return this.setResult(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.metric.SearchO.prototype.hasResult = function() {
-  return jspb.Message.getField(this, 2) != null;
+proto.metric.SearchO.prototype.clearResultList = function() {
+  return this.setResultList([]);
 };
 
 

@@ -97,11 +97,11 @@ export namespace SearchI {
     }
 
     export class Property extends jspb.Message {
+      getTimeline(): string;
+      setTimeline(value: string): Property;
+
       getTimestamp(): string;
       setTimestamp(value: string): Property;
-
-      getUpdateId(): string;
-      setUpdateId(value: string): Property;
 
       serializeBinary(): Uint8Array;
       toObject(includeInstance?: boolean): Property.AsObject;
@@ -122,8 +122,8 @@ export namespace SearchI {
 
     export namespace Property {
       export type AsObject = {
+        timeline: string;
         timestamp: string;
-        updateId: string;
       };
     }
   }
@@ -135,10 +135,10 @@ export class SearchO extends jspb.Message {
   hasFilter(): boolean;
   clearFilter(): SearchO;
 
-  getResult(): SearchO.Result | undefined;
-  setResult(value?: SearchO.Result): SearchO;
-  hasResult(): boolean;
-  clearResult(): SearchO;
+  getResultList(): Array<SearchO.Result>;
+  setResultList(value: Array<SearchO.Result>): SearchO;
+  clearResultList(): SearchO;
+  addResult(value?: SearchO.Result, index?: number): SearchO.Result;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SearchO.AsObject;
@@ -157,7 +157,7 @@ export class SearchO extends jspb.Message {
 export namespace SearchO {
   export type AsObject = {
     filter?: SearchO.Filter.AsObject;
-    result?: SearchO.Result.AsObject;
+    resultList: Array<SearchO.Result.AsObject>;
   };
 
   export class Filter extends jspb.Message {
@@ -223,11 +223,11 @@ export namespace SearchO {
     clearDatapointList(): Result;
     addDatapoint(value: number, index?: number): Result;
 
+    getTimeline(): string;
+    setTimeline(value: string): Result;
+
     getTimestamp(): string;
     setTimestamp(value: string): Result;
-
-    getUpdateId(): string;
-    setUpdateId(value: string): Result;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Result.AsObject;
@@ -246,8 +246,8 @@ export namespace SearchO {
   export namespace Result {
     export type AsObject = {
       datapointList: Array<number>;
+      timeline: string;
       timestamp: string;
-      updateId: string;
     };
   }
 }

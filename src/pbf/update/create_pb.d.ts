@@ -1,9 +1,6 @@
 import * as jspb from "google-protobuf";
 
 export class CreateI extends jspb.Message {
-  getName(): string;
-  setName(value: string): CreateI;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateI.AsObject;
   static toObject(includeInstance: boolean, msg: CreateI): CreateI.AsObject;
@@ -19,15 +16,10 @@ export class CreateI extends jspb.Message {
 }
 
 export namespace CreateI {
-  export type AsObject = {
-    name: string;
-  };
+  export type AsObject = {};
 }
 
 export class CreateO extends jspb.Message {
-  getMessage(): string;
-  setMessage(value: string): CreateO;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateO.AsObject;
   static toObject(includeInstance: boolean, msg: CreateO): CreateO.AsObject;
@@ -43,7 +35,5 @@ export class CreateO extends jspb.Message {
 }
 
 export namespace CreateO {
-  export type AsObject = {
-    message: string;
-  };
+  export type AsObject = {};
 }

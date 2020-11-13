@@ -88,7 +88,7 @@ proto.update.CreateI.prototype.toObject = function(opt_includeInstance) {
  */
 proto.update.CreateI.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+
   };
 
   if (includeInstance) {
@@ -125,10 +125,6 @@ proto.update.CreateI.deserializeBinaryFromReader = function(msg, reader) {
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -158,31 +154,6 @@ proto.update.CreateI.prototype.serializeBinary = function() {
  */
 proto.update.CreateI.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string name = 1;
- * @return {string}
- */
-proto.update.CreateI.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.update.CreateI} returns this
- */
-proto.update.CreateI.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -218,7 +189,7 @@ proto.update.CreateO.prototype.toObject = function(opt_includeInstance) {
  */
 proto.update.CreateO.toObject = function(includeInstance, msg) {
   var f, obj = {
-    message: jspb.Message.getFieldWithDefault(msg, 1, "")
+
   };
 
   if (includeInstance) {
@@ -255,10 +226,6 @@ proto.update.CreateO.deserializeBinaryFromReader = function(msg, reader) {
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMessage(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -288,31 +255,6 @@ proto.update.CreateO.prototype.serializeBinary = function() {
  */
 proto.update.CreateO.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMessage();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string message = 1;
- * @return {string}
- */
-proto.update.CreateO.prototype.getMessage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.update.CreateO} returns this
- */
-proto.update.CreateO.prototype.setMessage = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

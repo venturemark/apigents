@@ -37,6 +37,36 @@ export const Metric = {
 
 // -------------------------------------------------------------------------- //
 
+import * as MetupdClient from "./pbf/metupd/ApiServiceClientPb";
+import * as MetupdCreate from "./pbf/metupd/create_pb";
+import * as MetupdDelete from "./pbf/metupd/delete_pb";
+import * as MetupdSearch from "./pbf/metupd/search_pb";
+import * as MetupdUpdate from "./pbf/metupd/update_pb";
+
+export const Metupd = {
+  Client: MetupdClient.APIClient,
+  Create: {
+    I: MetupdCreate.CreateI,
+    O: MetupdCreate.CreateO,
+  },
+  Delete: {
+    I: MetupdDelete.DeleteI,
+    O: MetupdDelete.DeleteO,
+  },
+  Search: {
+    I: MetupdSearch.SearchI,
+    O: MetupdSearch.SearchO,
+  },
+  Update: {
+    I: MetupdUpdate.UpdateI,
+    O: MetupdUpdate.UpdateO,
+  },
+};
+
+// -------------------------------------------------------------------------- //
+
+// -------------------------------------------------------------------------- //
+
 import * as UpdateClient from "./pbf/update/ApiServiceClientPb";
 import * as UpdateCreate from "./pbf/update/create_pb";
 import * as UpdateDelete from "./pbf/update/delete_pb";
