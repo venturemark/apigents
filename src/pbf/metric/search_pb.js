@@ -643,7 +643,7 @@ proto.metric.SearchI.Filter.Property.prototype.toObject = function(opt_includeIn
 proto.metric.SearchI.Filter.Property.toObject = function(includeInstance, msg) {
   var f, obj = {
     timeline: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    timestamp: jspb.Message.getFieldWithDefault(msg, 2, "")
+    timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -685,7 +685,7 @@ proto.metric.SearchI.Filter.Property.deserializeBinaryFromReader = function(msg,
       msg.setTimeline(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setTimestamp(value);
       break;
     default:
@@ -725,8 +725,8 @@ proto.metric.SearchI.Filter.Property.serializeBinaryToWriter = function(message,
     );
   }
   f = message.getTimestamp();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0) {
+    writer.writeInt64(
       2,
       f
     );
@@ -753,20 +753,20 @@ proto.metric.SearchI.Filter.Property.prototype.setTimeline = function(value) {
 
 
 /**
- * optional string timestamp = 2;
- * @return {string}
+ * optional int64 timestamp = 2;
+ * @return {number}
  */
 proto.metric.SearchI.Filter.Property.prototype.getTimestamp = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.metric.SearchI.Filter.Property} returns this
  */
 proto.metric.SearchI.Filter.Property.prototype.setTimestamp = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -1407,7 +1407,7 @@ proto.metric.SearchO.Result.toObject = function(includeInstance, msg) {
   var f, obj = {
     datapointList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
     timeline: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    timestamp: jspb.Message.getFieldWithDefault(msg, 4, "")
+    timestamp: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -1453,7 +1453,7 @@ proto.metric.SearchO.Result.deserializeBinaryFromReader = function(msg, reader) 
       msg.setTimeline(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setTimestamp(value);
       break;
     default:
@@ -1500,8 +1500,8 @@ proto.metric.SearchO.Result.serializeBinaryToWriter = function(message, writer) 
     );
   }
   f = message.getTimestamp();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0) {
+    writer.writeInt64(
       4,
       f
     );
@@ -1565,20 +1565,20 @@ proto.metric.SearchO.Result.prototype.setTimeline = function(value) {
 
 
 /**
- * optional string timestamp = 4;
- * @return {string}
+ * optional int64 timestamp = 4;
+ * @return {number}
  */
 proto.metric.SearchO.Result.prototype.getTimestamp = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.metric.SearchO.Result} returns this
  */
 proto.metric.SearchO.Result.prototype.setTimestamp = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 

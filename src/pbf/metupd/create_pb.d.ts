@@ -35,8 +35,8 @@ export namespace CreateI {
 }
 
 export class CreateO extends jspb.Message {
-  getTimestamp(): string;
-  setTimestamp(value: string): CreateO;
+  getTimestamp(): number;
+  setTimestamp(value: number): CreateO;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateO.AsObject;
@@ -54,6 +54,6 @@ export class CreateO extends jspb.Message {
 
 export namespace CreateO {
   export type AsObject = {
-    timestamp: string;
+    timestamp: number;
   };
 }

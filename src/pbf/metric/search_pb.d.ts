@@ -100,8 +100,8 @@ export namespace SearchI {
       getTimeline(): string;
       setTimeline(value: string): Property;
 
-      getTimestamp(): string;
-      setTimestamp(value: string): Property;
+      getTimestamp(): number;
+      setTimestamp(value: number): Property;
 
       serializeBinary(): Uint8Array;
       toObject(includeInstance?: boolean): Property.AsObject;
@@ -123,7 +123,7 @@ export namespace SearchI {
     export namespace Property {
       export type AsObject = {
         timeline: string;
-        timestamp: string;
+        timestamp: number;
       };
     }
   }
@@ -226,8 +226,8 @@ export namespace SearchO {
     getTimeline(): string;
     setTimeline(value: string): Result;
 
-    getTimestamp(): string;
-    setTimestamp(value: string): Result;
+    getTimestamp(): number;
+    setTimestamp(value: number): Result;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Result.AsObject;
@@ -247,7 +247,7 @@ export namespace SearchO {
     export type AsObject = {
       datapointList: Array<number>;
       timeline: string;
-      timestamp: string;
+      timestamp: number;
     };
   }
 }
