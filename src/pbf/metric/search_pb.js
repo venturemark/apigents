@@ -1406,8 +1406,8 @@ proto.metric.SearchO.Result.prototype.toObject = function(opt_includeInstance) {
 proto.metric.SearchO.Result.toObject = function(includeInstance, msg) {
   var f, obj = {
     yaxisList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    timeline: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    timestamp: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    timeline: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -1448,11 +1448,11 @@ proto.metric.SearchO.Result.deserializeBinaryFromReader = function(msg, reader) 
       var value = /** @type {!Array<number>} */ (reader.readPackedInt64());
       msg.setYaxisList(value);
       break;
-    case 3:
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setTimeline(value);
       break;
-    case 4:
+    case 3:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setTimestamp(value);
       break;
@@ -1495,14 +1495,14 @@ proto.metric.SearchO.Result.serializeBinaryToWriter = function(message, writer) 
   f = message.getTimeline();
   if (f.length > 0) {
     writer.writeString(
-      3,
+      2,
       f
     );
   }
   f = message.getTimestamp();
   if (f !== 0) {
     writer.writeInt64(
-      4,
+      3,
       f
     );
   }
@@ -1547,11 +1547,11 @@ proto.metric.SearchO.Result.prototype.clearYaxisList = function() {
 
 
 /**
- * optional string timeline = 3;
+ * optional string timeline = 2;
  * @return {string}
  */
 proto.metric.SearchO.Result.prototype.getTimeline = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -1560,16 +1560,16 @@ proto.metric.SearchO.Result.prototype.getTimeline = function() {
  * @return {!proto.metric.SearchO.Result} returns this
  */
 proto.metric.SearchO.Result.prototype.setTimeline = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional int64 timestamp = 4;
+ * optional int64 timestamp = 3;
  * @return {number}
  */
 proto.metric.SearchO.Result.prototype.getTimestamp = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
@@ -1578,7 +1578,7 @@ proto.metric.SearchO.Result.prototype.getTimestamp = function() {
  * @return {!proto.metric.SearchO.Result} returns this
  */
 proto.metric.SearchO.Result.prototype.setTimestamp = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
