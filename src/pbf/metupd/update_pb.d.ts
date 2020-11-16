@@ -1,6 +1,20 @@
 import * as jspb from "google-protobuf";
 
 export class UpdateI extends jspb.Message {
+  getYaxisList(): Array<number>;
+  setYaxisList(value: Array<number>): UpdateI;
+  clearYaxisList(): UpdateI;
+  addYaxis(value: number, index?: number): UpdateI;
+
+  getText(): string;
+  setText(value: string): UpdateI;
+
+  getTimeline(): string;
+  setTimeline(value: string): UpdateI;
+
+  getTimestamp(): number;
+  setTimestamp(value: number): UpdateI;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateI.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateI): UpdateI.AsObject;
@@ -16,10 +30,18 @@ export class UpdateI extends jspb.Message {
 }
 
 export namespace UpdateI {
-  export type AsObject = {};
+  export type AsObject = {
+    yaxisList: Array<number>;
+    text: string;
+    timeline: string;
+    timestamp: number;
+  };
 }
 
 export class UpdateO extends jspb.Message {
+  getTimestamp(): number;
+  setTimestamp(value: number): UpdateO;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateO.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateO): UpdateO.AsObject;
@@ -35,5 +57,7 @@ export class UpdateO extends jspb.Message {
 }
 
 export namespace UpdateO {
-  export type AsObject = {};
+  export type AsObject = {
+    timestamp: number;
+  };
 }

@@ -25,7 +25,7 @@ goog.exportSymbol('proto.metupd.UpdateO', null, global);
  * @constructor
  */
 proto.metupd.UpdateI = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.metupd.UpdateI.repeatedFields_, null);
 };
 goog.inherits(proto.metupd.UpdateI, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -56,6 +56,13 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.metupd.UpdateO.displayName = 'proto.metupd.UpdateO';
 }
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.metupd.UpdateI.repeatedFields_ = [1];
 
 
 
@@ -88,7 +95,10 @@ proto.metupd.UpdateI.prototype.toObject = function(opt_includeInstance) {
  */
 proto.metupd.UpdateI.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    yaxisList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+    text: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    timeline: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    timestamp: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -125,6 +135,22 @@ proto.metupd.UpdateI.deserializeBinaryFromReader = function(msg, reader) {
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {!Array<number>} */ (reader.readPackedInt64());
+      msg.setYaxisList(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setText(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTimeline(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTimestamp(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -154,6 +180,125 @@ proto.metupd.UpdateI.prototype.serializeBinary = function() {
  */
 proto.metupd.UpdateI.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getYaxisList();
+  if (f.length > 0) {
+    writer.writePackedInt64(
+      1,
+      f
+    );
+  }
+  f = message.getText();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getTimeline();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getTimestamp();
+  if (f !== 0) {
+    writer.writeInt64(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * repeated int64 yaxis = 1;
+ * @return {!Array<number>}
+ */
+proto.metupd.UpdateI.prototype.getYaxisList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.metupd.UpdateI} returns this
+ */
+proto.metupd.UpdateI.prototype.setYaxisList = function(value) {
+  return jspb.Message.setField(this, 1, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.metupd.UpdateI} returns this
+ */
+proto.metupd.UpdateI.prototype.addYaxis = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.metupd.UpdateI} returns this
+ */
+proto.metupd.UpdateI.prototype.clearYaxisList = function() {
+  return this.setYaxisList([]);
+};
+
+
+/**
+ * optional string text = 2;
+ * @return {string}
+ */
+proto.metupd.UpdateI.prototype.getText = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.metupd.UpdateI} returns this
+ */
+proto.metupd.UpdateI.prototype.setText = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string timeline = 3;
+ * @return {string}
+ */
+proto.metupd.UpdateI.prototype.getTimeline = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.metupd.UpdateI} returns this
+ */
+proto.metupd.UpdateI.prototype.setTimeline = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional int64 timestamp = 4;
+ * @return {number}
+ */
+proto.metupd.UpdateI.prototype.getTimestamp = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.metupd.UpdateI} returns this
+ */
+proto.metupd.UpdateI.prototype.setTimestamp = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -189,7 +334,7 @@ proto.metupd.UpdateO.prototype.toObject = function(opt_includeInstance) {
  */
 proto.metupd.UpdateO.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -226,6 +371,10 @@ proto.metupd.UpdateO.deserializeBinaryFromReader = function(msg, reader) {
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTimestamp(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -255,6 +404,31 @@ proto.metupd.UpdateO.prototype.serializeBinary = function() {
  */
 proto.metupd.UpdateO.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getTimestamp();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int64 timestamp = 1;
+ * @return {number}
+ */
+proto.metupd.UpdateO.prototype.getTimestamp = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.metupd.UpdateO} returns this
+ */
+proto.metupd.UpdateO.prototype.setTimestamp = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
