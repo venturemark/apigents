@@ -39,8 +39,11 @@ export namespace UpdateI {
 }
 
 export class UpdateO extends jspb.Message {
-  getTimestamp(): number;
-  setTimestamp(value: number): UpdateO;
+  getMetric(): boolean;
+  setMetric(value: boolean): UpdateO;
+
+  getUpdate(): boolean;
+  setUpdate(value: boolean): UpdateO;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateO.AsObject;
@@ -58,6 +61,7 @@ export class UpdateO extends jspb.Message {
 
 export namespace UpdateO {
   export type AsObject = {
-    timestamp: number;
+    metric: boolean;
+    update: boolean;
   };
 }

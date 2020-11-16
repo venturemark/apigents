@@ -334,7 +334,8 @@ proto.metupd.UpdateO.prototype.toObject = function(opt_includeInstance) {
  */
 proto.metupd.UpdateO.toObject = function(includeInstance, msg) {
   var f, obj = {
-    timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    metric: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+    update: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
   };
 
   if (includeInstance) {
@@ -372,8 +373,12 @@ proto.metupd.UpdateO.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setTimestamp(value);
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setMetric(value);
+      break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setUpdate(value);
       break;
     default:
       reader.skipField();
@@ -404,10 +409,17 @@ proto.metupd.UpdateO.prototype.serializeBinary = function() {
  */
 proto.metupd.UpdateO.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTimestamp();
-  if (f !== 0) {
-    writer.writeInt64(
+  f = message.getMetric();
+  if (f) {
+    writer.writeBool(
       1,
+      f
+    );
+  }
+  f = message.getUpdate();
+  if (f) {
+    writer.writeBool(
+      2,
       f
     );
   }
@@ -415,20 +427,38 @@ proto.metupd.UpdateO.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional int64 timestamp = 1;
- * @return {number}
+ * optional bool metric = 1;
+ * @return {boolean}
  */
-proto.metupd.UpdateO.prototype.getTimestamp = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.metupd.UpdateO.prototype.getMetric = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
 
 /**
- * @param {number} value
+ * @param {boolean} value
  * @return {!proto.metupd.UpdateO} returns this
  */
-proto.metupd.UpdateO.prototype.setTimestamp = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+proto.metupd.UpdateO.prototype.setMetric = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 1, value);
+};
+
+
+/**
+ * optional bool update = 2;
+ * @return {boolean}
+ */
+proto.metupd.UpdateO.prototype.getUpdate = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.metupd.UpdateO} returns this
+ */
+proto.metupd.UpdateO.prototype.setUpdate = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 
