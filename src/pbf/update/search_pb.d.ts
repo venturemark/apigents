@@ -1,10 +1,15 @@
 import * as jspb from "google-protobuf";
 
 export class SearchI extends jspb.Message {
-  getFilter(): SearchI.Filter | undefined;
-  setFilter(value?: SearchI.Filter): SearchI;
-  hasFilter(): boolean;
-  clearFilter(): SearchI;
+  getApi(): SearchI_API | undefined;
+  setApi(value?: SearchI_API): SearchI;
+  hasApi(): boolean;
+  clearApi(): SearchI;
+
+  getObjList(): Array<SearchI_Obj>;
+  setObjList(value: Array<SearchI_Obj>): SearchI;
+  clearObjList(): SearchI;
+  addObj(value?: SearchI_Obj, index?: number): SearchI_Obj;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SearchI.AsObject;
@@ -22,123 +27,145 @@ export class SearchI extends jspb.Message {
 
 export namespace SearchI {
   export type AsObject = {
-    filter?: SearchI.Filter.AsObject;
+    api?: SearchI_API.AsObject;
+    objList: Array<SearchI_Obj.AsObject>;
   };
+}
 
-  export class Filter extends jspb.Message {
-    getChunking(): SearchI.Filter.Chunking | undefined;
-    setChunking(value?: SearchI.Filter.Chunking): Filter;
-    hasChunking(): boolean;
-    clearChunking(): Filter;
+export class SearchI_API extends jspb.Message {
+  getChunking(): SearchI_API_Chunking | undefined;
+  setChunking(value?: SearchI_API_Chunking): SearchI_API;
+  hasChunking(): boolean;
+  clearChunking(): SearchI_API;
 
-    getOperatorList(): Array<string>;
-    setOperatorList(value: Array<string>): Filter;
-    clearOperatorList(): Filter;
-    addOperator(value: string, index?: number): Filter;
+  getOperatorList(): Array<string>;
+  setOperatorList(value: Array<string>): SearchI_API;
+  clearOperatorList(): SearchI_API;
+  addOperator(value: string, index?: number): SearchI_API;
 
-    getPropertyList(): Array<SearchI.Filter.Property>;
-    setPropertyList(value: Array<SearchI.Filter.Property>): Filter;
-    clearPropertyList(): Filter;
-    addProperty(
-      value?: SearchI.Filter.Property,
-      index?: number
-    ): SearchI.Filter.Property;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SearchI_API.AsObject;
+  static toObject(
+    includeInstance: boolean,
+    msg: SearchI_API
+  ): SearchI_API.AsObject;
+  static serializeBinaryToWriter(
+    message: SearchI_API,
+    writer: jspb.BinaryWriter
+  ): void;
+  static deserializeBinary(bytes: Uint8Array): SearchI_API;
+  static deserializeBinaryFromReader(
+    message: SearchI_API,
+    reader: jspb.BinaryReader
+  ): SearchI_API;
+}
 
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Filter.AsObject;
-    static toObject(includeInstance: boolean, msg: Filter): Filter.AsObject;
-    static serializeBinaryToWriter(
-      message: Filter,
-      writer: jspb.BinaryWriter
-    ): void;
-    static deserializeBinary(bytes: Uint8Array): Filter;
-    static deserializeBinaryFromReader(
-      message: Filter,
-      reader: jspb.BinaryReader
-    ): Filter;
-  }
+export namespace SearchI_API {
+  export type AsObject = {
+    chunking?: SearchI_API_Chunking.AsObject;
+    operatorList: Array<string>;
+  };
+}
 
-  export namespace Filter {
-    export type AsObject = {
-      chunking?: SearchI.Filter.Chunking.AsObject;
-      operatorList: Array<string>;
-      propertyList: Array<SearchI.Filter.Property.AsObject>;
-    };
+export class SearchI_API_Chunking extends jspb.Message {
+  getPointer(): string;
+  setPointer(value: string): SearchI_API_Chunking;
 
-    export class Chunking extends jspb.Message {
-      getPointer(): string;
-      setPointer(value: string): Chunking;
+  getPerpage(): string;
+  setPerpage(value: string): SearchI_API_Chunking;
 
-      getPerpage(): string;
-      setPerpage(value: string): Chunking;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SearchI_API_Chunking.AsObject;
+  static toObject(
+    includeInstance: boolean,
+    msg: SearchI_API_Chunking
+  ): SearchI_API_Chunking.AsObject;
+  static serializeBinaryToWriter(
+    message: SearchI_API_Chunking,
+    writer: jspb.BinaryWriter
+  ): void;
+  static deserializeBinary(bytes: Uint8Array): SearchI_API_Chunking;
+  static deserializeBinaryFromReader(
+    message: SearchI_API_Chunking,
+    reader: jspb.BinaryReader
+  ): SearchI_API_Chunking;
+}
 
-      serializeBinary(): Uint8Array;
-      toObject(includeInstance?: boolean): Chunking.AsObject;
-      static toObject(
-        includeInstance: boolean,
-        msg: Chunking
-      ): Chunking.AsObject;
-      static serializeBinaryToWriter(
-        message: Chunking,
-        writer: jspb.BinaryWriter
-      ): void;
-      static deserializeBinary(bytes: Uint8Array): Chunking;
-      static deserializeBinaryFromReader(
-        message: Chunking,
-        reader: jspb.BinaryReader
-      ): Chunking;
-    }
+export namespace SearchI_API_Chunking {
+  export type AsObject = {
+    pointer: string;
+    perpage: string;
+  };
+}
 
-    export namespace Chunking {
-      export type AsObject = {
-        pointer: string;
-        perpage: string;
-      };
-    }
+export class SearchI_Obj extends jspb.Message {
+  getMetadataMap(): jspb.Map<string, string>;
+  clearMetadataMap(): SearchI_Obj;
 
-    export class Property extends jspb.Message {
-      getTimeline(): string;
-      setTimeline(value: string): Property;
+  getPropertyList(): Array<SearchI_Obj_Property>;
+  setPropertyList(value: Array<SearchI_Obj_Property>): SearchI_Obj;
+  clearPropertyList(): SearchI_Obj;
+  addProperty(
+    value?: SearchI_Obj_Property,
+    index?: number
+  ): SearchI_Obj_Property;
 
-      getTimestamp(): number;
-      setTimestamp(value: number): Property;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SearchI_Obj.AsObject;
+  static toObject(
+    includeInstance: boolean,
+    msg: SearchI_Obj
+  ): SearchI_Obj.AsObject;
+  static serializeBinaryToWriter(
+    message: SearchI_Obj,
+    writer: jspb.BinaryWriter
+  ): void;
+  static deserializeBinary(bytes: Uint8Array): SearchI_Obj;
+  static deserializeBinaryFromReader(
+    message: SearchI_Obj,
+    reader: jspb.BinaryReader
+  ): SearchI_Obj;
+}
 
-      serializeBinary(): Uint8Array;
-      toObject(includeInstance?: boolean): Property.AsObject;
-      static toObject(
-        includeInstance: boolean,
-        msg: Property
-      ): Property.AsObject;
-      static serializeBinaryToWriter(
-        message: Property,
-        writer: jspb.BinaryWriter
-      ): void;
-      static deserializeBinary(bytes: Uint8Array): Property;
-      static deserializeBinaryFromReader(
-        message: Property,
-        reader: jspb.BinaryReader
-      ): Property;
-    }
+export namespace SearchI_Obj {
+  export type AsObject = {
+    metadataMap: Array<[string, string]>;
+    propertyList: Array<SearchI_Obj_Property.AsObject>;
+  };
+}
 
-    export namespace Property {
-      export type AsObject = {
-        timeline: string;
-        timestamp: number;
-      };
-    }
-  }
+export class SearchI_Obj_Property extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SearchI_Obj_Property.AsObject;
+  static toObject(
+    includeInstance: boolean,
+    msg: SearchI_Obj_Property
+  ): SearchI_Obj_Property.AsObject;
+  static serializeBinaryToWriter(
+    message: SearchI_Obj_Property,
+    writer: jspb.BinaryWriter
+  ): void;
+  static deserializeBinary(bytes: Uint8Array): SearchI_Obj_Property;
+  static deserializeBinaryFromReader(
+    message: SearchI_Obj_Property,
+    reader: jspb.BinaryReader
+  ): SearchI_Obj_Property;
+}
+
+export namespace SearchI_Obj_Property {
+  export type AsObject = {};
 }
 
 export class SearchO extends jspb.Message {
-  getFilter(): SearchO.Filter | undefined;
-  setFilter(value?: SearchO.Filter): SearchO;
-  hasFilter(): boolean;
-  clearFilter(): SearchO;
+  getApi(): SearchO_API | undefined;
+  setApi(value?: SearchO_API): SearchO;
+  hasApi(): boolean;
+  clearApi(): SearchO;
 
-  getResultList(): Array<SearchO.Result>;
-  setResultList(value: Array<SearchO.Result>): SearchO;
-  clearResultList(): SearchO;
-  addResult(value?: SearchO.Result, index?: number): SearchO.Result;
+  getObjList(): Array<SearchO_Obj>;
+  setObjList(value: Array<SearchO_Obj>): SearchO;
+  clearObjList(): SearchO;
+  addObj(value?: SearchO_Obj, index?: number): SearchO_Obj;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SearchO.AsObject;
@@ -156,96 +183,130 @@ export class SearchO extends jspb.Message {
 
 export namespace SearchO {
   export type AsObject = {
-    filter?: SearchO.Filter.AsObject;
-    resultList: Array<SearchO.Result.AsObject>;
+    api?: SearchO_API.AsObject;
+    objList: Array<SearchO_Obj.AsObject>;
   };
+}
 
-  export class Filter extends jspb.Message {
-    getChunking(): SearchO.Filter.Chunking | undefined;
-    setChunking(value?: SearchO.Filter.Chunking): Filter;
-    hasChunking(): boolean;
-    clearChunking(): Filter;
+export class SearchO_API extends jspb.Message {
+  getChunking(): SearchO_API_Chunking | undefined;
+  setChunking(value?: SearchO_API_Chunking): SearchO_API;
+  hasChunking(): boolean;
+  clearChunking(): SearchO_API;
 
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Filter.AsObject;
-    static toObject(includeInstance: boolean, msg: Filter): Filter.AsObject;
-    static serializeBinaryToWriter(
-      message: Filter,
-      writer: jspb.BinaryWriter
-    ): void;
-    static deserializeBinary(bytes: Uint8Array): Filter;
-    static deserializeBinaryFromReader(
-      message: Filter,
-      reader: jspb.BinaryReader
-    ): Filter;
-  }
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SearchO_API.AsObject;
+  static toObject(
+    includeInstance: boolean,
+    msg: SearchO_API
+  ): SearchO_API.AsObject;
+  static serializeBinaryToWriter(
+    message: SearchO_API,
+    writer: jspb.BinaryWriter
+  ): void;
+  static deserializeBinary(bytes: Uint8Array): SearchO_API;
+  static deserializeBinaryFromReader(
+    message: SearchO_API,
+    reader: jspb.BinaryReader
+  ): SearchO_API;
+}
 
-  export namespace Filter {
-    export type AsObject = {
-      chunking?: SearchO.Filter.Chunking.AsObject;
-    };
+export namespace SearchO_API {
+  export type AsObject = {
+    chunking?: SearchO_API_Chunking.AsObject;
+  };
+}
 
-    export class Chunking extends jspb.Message {
-      getPointer(): string;
-      setPointer(value: string): Chunking;
+export class SearchO_API_Chunking extends jspb.Message {
+  getPointer(): string;
+  setPointer(value: string): SearchO_API_Chunking;
 
-      getPerpage(): string;
-      setPerpage(value: string): Chunking;
+  getPerpage(): string;
+  setPerpage(value: string): SearchO_API_Chunking;
 
-      serializeBinary(): Uint8Array;
-      toObject(includeInstance?: boolean): Chunking.AsObject;
-      static toObject(
-        includeInstance: boolean,
-        msg: Chunking
-      ): Chunking.AsObject;
-      static serializeBinaryToWriter(
-        message: Chunking,
-        writer: jspb.BinaryWriter
-      ): void;
-      static deserializeBinary(bytes: Uint8Array): Chunking;
-      static deserializeBinaryFromReader(
-        message: Chunking,
-        reader: jspb.BinaryReader
-      ): Chunking;
-    }
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SearchO_API_Chunking.AsObject;
+  static toObject(
+    includeInstance: boolean,
+    msg: SearchO_API_Chunking
+  ): SearchO_API_Chunking.AsObject;
+  static serializeBinaryToWriter(
+    message: SearchO_API_Chunking,
+    writer: jspb.BinaryWriter
+  ): void;
+  static deserializeBinary(bytes: Uint8Array): SearchO_API_Chunking;
+  static deserializeBinaryFromReader(
+    message: SearchO_API_Chunking,
+    reader: jspb.BinaryReader
+  ): SearchO_API_Chunking;
+}
 
-    export namespace Chunking {
-      export type AsObject = {
-        pointer: string;
-        perpage: string;
-      };
-    }
-  }
+export namespace SearchO_API_Chunking {
+  export type AsObject = {
+    pointer: string;
+    perpage: string;
+  };
+}
 
-  export class Result extends jspb.Message {
-    getText(): string;
-    setText(value: string): Result;
+export class SearchO_Obj extends jspb.Message {
+  getMetadataMap(): jspb.Map<string, string>;
+  clearMetadataMap(): SearchO_Obj;
 
-    getTimeline(): string;
-    setTimeline(value: string): Result;
+  getPropertyList(): Array<SearchO_Obj_Property>;
+  setPropertyList(value: Array<SearchO_Obj_Property>): SearchO_Obj;
+  clearPropertyList(): SearchO_Obj;
+  addProperty(
+    value?: SearchO_Obj_Property,
+    index?: number
+  ): SearchO_Obj_Property;
 
-    getTimestamp(): number;
-    setTimestamp(value: number): Result;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SearchO_Obj.AsObject;
+  static toObject(
+    includeInstance: boolean,
+    msg: SearchO_Obj
+  ): SearchO_Obj.AsObject;
+  static serializeBinaryToWriter(
+    message: SearchO_Obj,
+    writer: jspb.BinaryWriter
+  ): void;
+  static deserializeBinary(bytes: Uint8Array): SearchO_Obj;
+  static deserializeBinaryFromReader(
+    message: SearchO_Obj,
+    reader: jspb.BinaryReader
+  ): SearchO_Obj;
+}
 
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Result.AsObject;
-    static toObject(includeInstance: boolean, msg: Result): Result.AsObject;
-    static serializeBinaryToWriter(
-      message: Result,
-      writer: jspb.BinaryWriter
-    ): void;
-    static deserializeBinary(bytes: Uint8Array): Result;
-    static deserializeBinaryFromReader(
-      message: Result,
-      reader: jspb.BinaryReader
-    ): Result;
-  }
+export namespace SearchO_Obj {
+  export type AsObject = {
+    metadataMap: Array<[string, string]>;
+    propertyList: Array<SearchO_Obj_Property.AsObject>;
+  };
+}
 
-  export namespace Result {
-    export type AsObject = {
-      text: string;
-      timeline: string;
-      timestamp: number;
-    };
-  }
+export class SearchO_Obj_Property extends jspb.Message {
+  getText(): string;
+  setText(value: string): SearchO_Obj_Property;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SearchO_Obj_Property.AsObject;
+  static toObject(
+    includeInstance: boolean,
+    msg: SearchO_Obj_Property
+  ): SearchO_Obj_Property.AsObject;
+  static serializeBinaryToWriter(
+    message: SearchO_Obj_Property,
+    writer: jspb.BinaryWriter
+  ): void;
+  static deserializeBinary(bytes: Uint8Array): SearchO_Obj_Property;
+  static deserializeBinaryFromReader(
+    message: SearchO_Obj_Property,
+    reader: jspb.BinaryReader
+  ): SearchO_Obj_Property;
+}
+
+export namespace SearchO_Obj_Property {
+  export type AsObject = {
+    text: string;
+  };
 }
