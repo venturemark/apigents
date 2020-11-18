@@ -71,7 +71,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.metupd.UpdateI_Obj = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.metupd.UpdateI_Obj.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.metupd.UpdateI_Obj, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -448,13 +448,6 @@ proto.metupd.UpdateI_API.serializeBinaryToWriter = function(message, writer) {
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.metupd.UpdateI_Obj.repeatedFields_ = [2];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -487,8 +480,7 @@ proto.metupd.UpdateI_Obj.prototype.toObject = function(opt_includeInstance) {
 proto.metupd.UpdateI_Obj.toObject = function(includeInstance, msg) {
   var f, obj = {
     metadataMap: (f = msg.getMetadataMap()) ? f.toObject(includeInstance, undefined) : [],
-    propertyList: jspb.Message.toObjectList(msg.getPropertyList(),
-    proto.metupd.UpdateI_Obj_Property.toObject, includeInstance)
+    property: (f = msg.getProperty()) && proto.metupd.UpdateI_Obj_Property.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -534,7 +526,7 @@ proto.metupd.UpdateI_Obj.deserializeBinaryFromReader = function(msg, reader) {
     case 2:
       var value = new proto.metupd.UpdateI_Obj_Property;
       reader.readMessage(value,proto.metupd.UpdateI_Obj_Property.deserializeBinaryFromReader);
-      msg.addProperty(value);
+      msg.setProperty(value);
       break;
     default:
       reader.skipField();
@@ -569,9 +561,9 @@ proto.metupd.UpdateI_Obj.serializeBinaryToWriter = function(message, writer) {
   if (f && f.getLength() > 0) {
     f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
-  f = message.getPropertyList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getProperty();
+  if (f != null) {
+    writer.writeMessage(
       2,
       f,
       proto.metupd.UpdateI_Obj_Property.serializeBinaryToWriter
@@ -603,40 +595,39 @@ proto.metupd.UpdateI_Obj.prototype.clearMetadataMap = function() {
 
 
 /**
- * repeated UpdateI_Obj_Property property = 2;
- * @return {!Array<!proto.metupd.UpdateI_Obj_Property>}
+ * optional UpdateI_Obj_Property property = 2;
+ * @return {?proto.metupd.UpdateI_Obj_Property}
  */
-proto.metupd.UpdateI_Obj.prototype.getPropertyList = function() {
-  return /** @type{!Array<!proto.metupd.UpdateI_Obj_Property>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.metupd.UpdateI_Obj_Property, 2));
+proto.metupd.UpdateI_Obj.prototype.getProperty = function() {
+  return /** @type{?proto.metupd.UpdateI_Obj_Property} */ (
+    jspb.Message.getWrapperField(this, proto.metupd.UpdateI_Obj_Property, 2));
 };
 
 
 /**
- * @param {!Array<!proto.metupd.UpdateI_Obj_Property>} value
+ * @param {?proto.metupd.UpdateI_Obj_Property|undefined} value
  * @return {!proto.metupd.UpdateI_Obj} returns this
 */
-proto.metupd.UpdateI_Obj.prototype.setPropertyList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.metupd.UpdateI_Obj.prototype.setProperty = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
- * @param {!proto.metupd.UpdateI_Obj_Property=} opt_value
- * @param {number=} opt_index
- * @return {!proto.metupd.UpdateI_Obj_Property}
- */
-proto.metupd.UpdateI_Obj.prototype.addProperty = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.metupd.UpdateI_Obj_Property, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.metupd.UpdateI_Obj} returns this
  */
-proto.metupd.UpdateI_Obj.prototype.clearPropertyList = function() {
-  return this.setPropertyList([]);
+proto.metupd.UpdateI_Obj.prototype.clearProperty = function() {
+  return this.setProperty(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.metupd.UpdateI_Obj.prototype.hasProperty = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

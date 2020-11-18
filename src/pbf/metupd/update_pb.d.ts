@@ -58,13 +58,10 @@ export class UpdateI_Obj extends jspb.Message {
   getMetadataMap(): jspb.Map<string, string>;
   clearMetadataMap(): UpdateI_Obj;
 
-  getPropertyList(): Array<UpdateI_Obj_Property>;
-  setPropertyList(value: Array<UpdateI_Obj_Property>): UpdateI_Obj;
-  clearPropertyList(): UpdateI_Obj;
-  addProperty(
-    value?: UpdateI_Obj_Property,
-    index?: number
-  ): UpdateI_Obj_Property;
+  getProperty(): UpdateI_Obj_Property | undefined;
+  setProperty(value?: UpdateI_Obj_Property): UpdateI_Obj;
+  hasProperty(): boolean;
+  clearProperty(): UpdateI_Obj;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateI_Obj.AsObject;
@@ -86,7 +83,7 @@ export class UpdateI_Obj extends jspb.Message {
 export namespace UpdateI_Obj {
   export type AsObject = {
     metadataMap: Array<[string, string]>;
-    propertyList: Array<UpdateI_Obj_Property.AsObject>;
+    property?: UpdateI_Obj_Property.AsObject;
   };
 }
 

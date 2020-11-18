@@ -102,13 +102,10 @@ export class SearchI_Obj extends jspb.Message {
   getMetadataMap(): jspb.Map<string, string>;
   clearMetadataMap(): SearchI_Obj;
 
-  getPropertyList(): Array<SearchI_Obj_Property>;
-  setPropertyList(value: Array<SearchI_Obj_Property>): SearchI_Obj;
-  clearPropertyList(): SearchI_Obj;
-  addProperty(
-    value?: SearchI_Obj_Property,
-    index?: number
-  ): SearchI_Obj_Property;
+  getProperty(): SearchI_Obj_Property | undefined;
+  setProperty(value?: SearchI_Obj_Property): SearchI_Obj;
+  hasProperty(): boolean;
+  clearProperty(): SearchI_Obj;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SearchI_Obj.AsObject;
@@ -130,7 +127,7 @@ export class SearchI_Obj extends jspb.Message {
 export namespace SearchI_Obj {
   export type AsObject = {
     metadataMap: Array<[string, string]>;
-    propertyList: Array<SearchI_Obj_Property.AsObject>;
+    property?: SearchI_Obj_Property.AsObject;
   };
 }
 
@@ -252,13 +249,10 @@ export class SearchO_Obj extends jspb.Message {
   getMetadataMap(): jspb.Map<string, string>;
   clearMetadataMap(): SearchO_Obj;
 
-  getPropertyList(): Array<SearchO_Obj_Property>;
-  setPropertyList(value: Array<SearchO_Obj_Property>): SearchO_Obj;
-  clearPropertyList(): SearchO_Obj;
-  addProperty(
-    value?: SearchO_Obj_Property,
-    index?: number
-  ): SearchO_Obj_Property;
+  getProperty(): SearchO_Obj_Property | undefined;
+  setProperty(value?: SearchO_Obj_Property): SearchO_Obj;
+  hasProperty(): boolean;
+  clearProperty(): SearchO_Obj;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SearchO_Obj.AsObject;
@@ -280,7 +274,7 @@ export class SearchO_Obj extends jspb.Message {
 export namespace SearchO_Obj {
   export type AsObject = {
     metadataMap: Array<[string, string]>;
-    propertyList: Array<SearchO_Obj_Property.AsObject>;
+    property?: SearchO_Obj_Property.AsObject;
   };
 }
 

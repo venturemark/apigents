@@ -58,13 +58,10 @@ export class CreateI_Obj extends jspb.Message {
   getMetadataMap(): jspb.Map<string, string>;
   clearMetadataMap(): CreateI_Obj;
 
-  getPropertyList(): Array<CreateI_Obj_Property>;
-  setPropertyList(value: Array<CreateI_Obj_Property>): CreateI_Obj;
-  clearPropertyList(): CreateI_Obj;
-  addProperty(
-    value?: CreateI_Obj_Property,
-    index?: number
-  ): CreateI_Obj_Property;
+  getProperty(): CreateI_Obj_Property | undefined;
+  setProperty(value?: CreateI_Obj_Property): CreateI_Obj;
+  hasProperty(): boolean;
+  clearProperty(): CreateI_Obj;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateI_Obj.AsObject;
@@ -86,7 +83,7 @@ export class CreateI_Obj extends jspb.Message {
 export namespace CreateI_Obj {
   export type AsObject = {
     metadataMap: Array<[string, string]>;
-    propertyList: Array<CreateI_Obj_Property.AsObject>;
+    property?: CreateI_Obj_Property.AsObject;
   };
 }
 

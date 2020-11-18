@@ -97,7 +97,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.metric.SearchI_Obj = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.metric.SearchI_Obj.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.metric.SearchI_Obj, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -202,7 +202,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.metric.SearchO_Obj = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.metric.SearchO_Obj.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.metric.SearchO_Obj, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -833,13 +833,6 @@ proto.metric.SearchI_API_Chunking.prototype.setPerpage = function(value) {
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.metric.SearchI_Obj.repeatedFields_ = [2];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -872,8 +865,7 @@ proto.metric.SearchI_Obj.prototype.toObject = function(opt_includeInstance) {
 proto.metric.SearchI_Obj.toObject = function(includeInstance, msg) {
   var f, obj = {
     metadataMap: (f = msg.getMetadataMap()) ? f.toObject(includeInstance, undefined) : [],
-    propertyList: jspb.Message.toObjectList(msg.getPropertyList(),
-    proto.metric.SearchI_Obj_Property.toObject, includeInstance)
+    property: (f = msg.getProperty()) && proto.metric.SearchI_Obj_Property.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -919,7 +911,7 @@ proto.metric.SearchI_Obj.deserializeBinaryFromReader = function(msg, reader) {
     case 2:
       var value = new proto.metric.SearchI_Obj_Property;
       reader.readMessage(value,proto.metric.SearchI_Obj_Property.deserializeBinaryFromReader);
-      msg.addProperty(value);
+      msg.setProperty(value);
       break;
     default:
       reader.skipField();
@@ -954,9 +946,9 @@ proto.metric.SearchI_Obj.serializeBinaryToWriter = function(message, writer) {
   if (f && f.getLength() > 0) {
     f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
-  f = message.getPropertyList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getProperty();
+  if (f != null) {
+    writer.writeMessage(
       2,
       f,
       proto.metric.SearchI_Obj_Property.serializeBinaryToWriter
@@ -988,40 +980,39 @@ proto.metric.SearchI_Obj.prototype.clearMetadataMap = function() {
 
 
 /**
- * repeated SearchI_Obj_Property property = 2;
- * @return {!Array<!proto.metric.SearchI_Obj_Property>}
+ * optional SearchI_Obj_Property property = 2;
+ * @return {?proto.metric.SearchI_Obj_Property}
  */
-proto.metric.SearchI_Obj.prototype.getPropertyList = function() {
-  return /** @type{!Array<!proto.metric.SearchI_Obj_Property>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.metric.SearchI_Obj_Property, 2));
+proto.metric.SearchI_Obj.prototype.getProperty = function() {
+  return /** @type{?proto.metric.SearchI_Obj_Property} */ (
+    jspb.Message.getWrapperField(this, proto.metric.SearchI_Obj_Property, 2));
 };
 
 
 /**
- * @param {!Array<!proto.metric.SearchI_Obj_Property>} value
+ * @param {?proto.metric.SearchI_Obj_Property|undefined} value
  * @return {!proto.metric.SearchI_Obj} returns this
 */
-proto.metric.SearchI_Obj.prototype.setPropertyList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.metric.SearchI_Obj.prototype.setProperty = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
- * @param {!proto.metric.SearchI_Obj_Property=} opt_value
- * @param {number=} opt_index
- * @return {!proto.metric.SearchI_Obj_Property}
- */
-proto.metric.SearchI_Obj.prototype.addProperty = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.metric.SearchI_Obj_Property, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.metric.SearchI_Obj} returns this
  */
-proto.metric.SearchI_Obj.prototype.clearPropertyList = function() {
-  return this.setPropertyList([]);
+proto.metric.SearchI_Obj.prototype.clearProperty = function() {
+  return this.setProperty(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.metric.SearchI_Obj.prototype.hasProperty = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -1649,13 +1640,6 @@ proto.metric.SearchO_API_Chunking.prototype.setPerpage = function(value) {
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.metric.SearchO_Obj.repeatedFields_ = [2];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1688,8 +1672,7 @@ proto.metric.SearchO_Obj.prototype.toObject = function(opt_includeInstance) {
 proto.metric.SearchO_Obj.toObject = function(includeInstance, msg) {
   var f, obj = {
     metadataMap: (f = msg.getMetadataMap()) ? f.toObject(includeInstance, undefined) : [],
-    propertyList: jspb.Message.toObjectList(msg.getPropertyList(),
-    proto.metric.SearchO_Obj_Property.toObject, includeInstance)
+    property: (f = msg.getProperty()) && proto.metric.SearchO_Obj_Property.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1735,7 +1718,7 @@ proto.metric.SearchO_Obj.deserializeBinaryFromReader = function(msg, reader) {
     case 2:
       var value = new proto.metric.SearchO_Obj_Property;
       reader.readMessage(value,proto.metric.SearchO_Obj_Property.deserializeBinaryFromReader);
-      msg.addProperty(value);
+      msg.setProperty(value);
       break;
     default:
       reader.skipField();
@@ -1770,9 +1753,9 @@ proto.metric.SearchO_Obj.serializeBinaryToWriter = function(message, writer) {
   if (f && f.getLength() > 0) {
     f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
-  f = message.getPropertyList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getProperty();
+  if (f != null) {
+    writer.writeMessage(
       2,
       f,
       proto.metric.SearchO_Obj_Property.serializeBinaryToWriter
@@ -1804,40 +1787,39 @@ proto.metric.SearchO_Obj.prototype.clearMetadataMap = function() {
 
 
 /**
- * repeated SearchO_Obj_Property property = 2;
- * @return {!Array<!proto.metric.SearchO_Obj_Property>}
+ * optional SearchO_Obj_Property property = 2;
+ * @return {?proto.metric.SearchO_Obj_Property}
  */
-proto.metric.SearchO_Obj.prototype.getPropertyList = function() {
-  return /** @type{!Array<!proto.metric.SearchO_Obj_Property>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.metric.SearchO_Obj_Property, 2));
+proto.metric.SearchO_Obj.prototype.getProperty = function() {
+  return /** @type{?proto.metric.SearchO_Obj_Property} */ (
+    jspb.Message.getWrapperField(this, proto.metric.SearchO_Obj_Property, 2));
 };
 
 
 /**
- * @param {!Array<!proto.metric.SearchO_Obj_Property>} value
+ * @param {?proto.metric.SearchO_Obj_Property|undefined} value
  * @return {!proto.metric.SearchO_Obj} returns this
 */
-proto.metric.SearchO_Obj.prototype.setPropertyList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.metric.SearchO_Obj.prototype.setProperty = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
- * @param {!proto.metric.SearchO_Obj_Property=} opt_value
- * @param {number=} opt_index
- * @return {!proto.metric.SearchO_Obj_Property}
- */
-proto.metric.SearchO_Obj.prototype.addProperty = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.metric.SearchO_Obj_Property, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.metric.SearchO_Obj} returns this
  */
-proto.metric.SearchO_Obj.prototype.clearPropertyList = function() {
-  return this.setPropertyList([]);
+proto.metric.SearchO_Obj.prototype.clearProperty = function() {
+  return this.setProperty(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.metric.SearchO_Obj.prototype.hasProperty = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
