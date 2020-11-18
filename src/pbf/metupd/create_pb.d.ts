@@ -157,8 +157,15 @@ export namespace CreateI_Obj_Property_Data {
 }
 
 export class CreateO extends jspb.Message {
-  getMetadataMap(): jspb.Map<string, string>;
-  clearMetadataMap(): CreateO;
+  getApi(): CreateO_API | undefined;
+  setApi(value?: CreateO_API): CreateO;
+  hasApi(): boolean;
+  clearApi(): CreateO;
+
+  getObj(): CreateO_Obj | undefined;
+  setObj(value?: CreateO_Obj): CreateO;
+  hasObj(): boolean;
+  clearObj(): CreateO;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateO.AsObject;
@@ -175,6 +182,56 @@ export class CreateO extends jspb.Message {
 }
 
 export namespace CreateO {
+  export type AsObject = {
+    api?: CreateO_API.AsObject;
+    obj?: CreateO_Obj.AsObject;
+  };
+}
+
+export class CreateO_API extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateO_API.AsObject;
+  static toObject(
+    includeInstance: boolean,
+    msg: CreateO_API
+  ): CreateO_API.AsObject;
+  static serializeBinaryToWriter(
+    message: CreateO_API,
+    writer: jspb.BinaryWriter
+  ): void;
+  static deserializeBinary(bytes: Uint8Array): CreateO_API;
+  static deserializeBinaryFromReader(
+    message: CreateO_API,
+    reader: jspb.BinaryReader
+  ): CreateO_API;
+}
+
+export namespace CreateO_API {
+  export type AsObject = {};
+}
+
+export class CreateO_Obj extends jspb.Message {
+  getMetadataMap(): jspb.Map<string, string>;
+  clearMetadataMap(): CreateO_Obj;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateO_Obj.AsObject;
+  static toObject(
+    includeInstance: boolean,
+    msg: CreateO_Obj
+  ): CreateO_Obj.AsObject;
+  static serializeBinaryToWriter(
+    message: CreateO_Obj,
+    writer: jspb.BinaryWriter
+  ): void;
+  static deserializeBinary(bytes: Uint8Array): CreateO_Obj;
+  static deserializeBinaryFromReader(
+    message: CreateO_Obj,
+    reader: jspb.BinaryReader
+  ): CreateO_Obj;
+}
+
+export namespace CreateO_Obj {
   export type AsObject = {
     metadataMap: Array<[string, string]>;
   };
