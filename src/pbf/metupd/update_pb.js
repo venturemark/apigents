@@ -905,7 +905,7 @@ proto.metupd.UpdateI_Obj_Property_Data.prototype.toObject = function(opt_include
 proto.metupd.UpdateI_Obj_Property_Data.toObject = function(includeInstance, msg) {
   var f, obj = {
     space: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    valueList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+    valueList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -947,7 +947,7 @@ proto.metupd.UpdateI_Obj_Property_Data.deserializeBinaryFromReader = function(ms
       msg.setSpace(value);
       break;
     case 2:
-      var value = /** @type {!Array<number>} */ (reader.readPackedInt64());
+      var value = /** @type {!Array<number>} */ (reader.readPackedDouble());
       msg.setValueList(value);
       break;
     default:
@@ -988,7 +988,7 @@ proto.metupd.UpdateI_Obj_Property_Data.serializeBinaryToWriter = function(messag
   }
   f = message.getValueList();
   if (f.length > 0) {
-    writer.writePackedInt64(
+    writer.writePackedDouble(
       2,
       f
     );
@@ -1015,11 +1015,11 @@ proto.metupd.UpdateI_Obj_Property_Data.prototype.setSpace = function(value) {
 
 
 /**
- * repeated int64 value = 2;
+ * repeated double value = 2;
  * @return {!Array<number>}
  */
 proto.metupd.UpdateI_Obj_Property_Data.prototype.getValueList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 2));
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedFloatingPointField(this, 2));
 };
 
 
