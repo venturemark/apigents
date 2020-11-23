@@ -67,6 +67,36 @@ export const Metupd = {
 
 // -------------------------------------------------------------------------- //
 
+import * as TimelineClient from "./pbf/timeline/ApiServiceClientPb";
+import * as TimelineCreate from "./pbf/timeline/create_pb";
+import * as TimelineDelete from "./pbf/timeline/delete_pb";
+import * as TimelineSearch from "./pbf/timeline/search_pb";
+import * as TimelineUpdate from "./pbf/timeline/update_pb";
+
+export const Timeline = {
+  Client: TimelineClient.APIClient,
+  Create: {
+    I: TimelineCreate.CreateI,
+    O: TimelineCreate.CreateO,
+  },
+  Delete: {
+    I: TimelineDelete.DeleteI,
+    O: TimelineDelete.DeleteO,
+  },
+  Search: {
+    I: TimelineSearch.SearchI,
+    O: TimelineSearch.SearchO,
+  },
+  Update: {
+    I: TimelineUpdate.UpdateI,
+    O: TimelineUpdate.UpdateO,
+  },
+};
+
+// -------------------------------------------------------------------------- //
+
+// -------------------------------------------------------------------------- //
+
 import * as UpdateClient from "./pbf/update/ApiServiceClientPb";
 import * as UpdateCreate from "./pbf/update/create_pb";
 import * as UpdateDelete from "./pbf/update/delete_pb";
