@@ -1833,7 +1833,7 @@ proto.timeline.SearchO_Obj_Property.prototype.toObject = function(opt_includeIns
  */
 proto.timeline.SearchO_Obj_Property.toObject = function(includeInstance, msg) {
   var f, obj = {
-    text: jspb.Message.getFieldWithDefault(msg, 1, "")
+    name: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1872,7 +1872,7 @@ proto.timeline.SearchO_Obj_Property.deserializeBinaryFromReader = function(msg, 
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setText(value);
+      msg.setName(value);
       break;
     default:
       reader.skipField();
@@ -1903,7 +1903,7 @@ proto.timeline.SearchO_Obj_Property.prototype.serializeBinary = function() {
  */
 proto.timeline.SearchO_Obj_Property.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getText();
+  f = message.getName();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -1914,10 +1914,10 @@ proto.timeline.SearchO_Obj_Property.serializeBinaryToWriter = function(message, 
 
 
 /**
- * optional string text = 1;
+ * optional string name = 1;
  * @return {string}
  */
-proto.timeline.SearchO_Obj_Property.prototype.getText = function() {
+proto.timeline.SearchO_Obj_Property.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -1926,7 +1926,7 @@ proto.timeline.SearchO_Obj_Property.prototype.getText = function() {
  * @param {string} value
  * @return {!proto.timeline.SearchO_Obj_Property} returns this
  */
-proto.timeline.SearchO_Obj_Property.prototype.setText = function(value) {
+proto.timeline.SearchO_Obj_Property.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 

@@ -88,8 +88,8 @@ export namespace UpdateI_Obj {
 }
 
 export class UpdateI_Obj_Property extends jspb.Message {
-  getText(): string;
-  setText(value: string): UpdateI_Obj_Property;
+  getName(): string;
+  setName(value: string): UpdateI_Obj_Property;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateI_Obj_Property.AsObject;
@@ -110,7 +110,7 @@ export class UpdateI_Obj_Property extends jspb.Message {
 
 export namespace UpdateI_Obj_Property {
   export type AsObject = {
-    text: string;
+    name: string;
   };
 }
 
