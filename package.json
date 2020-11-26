@@ -1,6 +1,6 @@
 {
   "name": "@venturemark/apigents",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "generated grpc api client in typescript",
   "repository": {
     "type": "git",
@@ -16,7 +16,8 @@
   "main": "./dst/index.js",
   "types": "./dst/index.d.ts",
   "scripts": {
-    "build": "./node_modules/rollup/dist/bin/rollup -c --exports named"
+    "build": "./node_modules/rollup/dist/bin/rollup -c --exports named",
+    "prepare": "./node_modules/rollup/dist/bin/rollup -c --exports named"
   },
   "sideEffects": false,
   "files": [
