@@ -1,40 +1,40 @@
 {
-  "name": "@venturemark/apigents",
-  "version": "0.3.0",
+  "author": "xh3b4sd",
+  "bugs": {
+    "url": "https://github.com/venturemark/apigents/issues"
+  },
+  "dependencies": {
+    "google-protobuf": "^3.14.0",
+    "grpc-web": "^1.2.1"
+  },
   "description": "generated grpc api client in typescript",
+  "devDependencies": {
+    "tslib": "^2.0.3",
+    "typescript": "^4.1.2"
+  },
+  "exports": {
+    ".": {
+      "default": "./dst/index.es.js",
+      "require": "./dst/index.js"
+    }
+  },
+  "files": [
+    "dst"
+  ],
+  "homepage": "https://github.com/venturemark/apigents#readme",
+  "license": "MIT",
+  "main": "./dst/index.js",
+  "module": "./dst/index.es.js",
+  "name": "@venturemark/apigents",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/venturemark/apigents.git"
   },
-  "exports": {
-    ".": {
-      "require": "./dst/index.js",
-      "default": "./dst/index.es.js"
-    }
-  },
-  "module": "./dst/index.es.js",
-  "main": "./dst/index.js",
-  "types": "./dst/index.d.ts",
   "scripts": {
     "build": "./node_modules/.bin/tsc -p .",
     "prepare": "./node_modules/.bin/tsc -p ."
   },
   "sideEffects": false,
-  "files": [
-    "dst"
-  ],
-  "dependencies": {
-    "google-protobuf": "^3.14.0",
-    "grpc-web": "^1.2.1"
-  },
-  "devDependencies": {
-    "tslib": "^2.0.3",
-    "typescript": "^4.1.2"
-  },
-  "author": "xh3b4sd",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/venturemark/apigents/issues"
-  },
-  "homepage": "https://github.com/venturemark/apigents#readme"
+  "types": "./dst/index.d.ts",
+  "version": "0.3.1"
 }
