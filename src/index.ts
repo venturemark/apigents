@@ -67,6 +67,36 @@ export const Metupd = {
 
 // -------------------------------------------------------------------------- //
 
+import * as TexupdClient from "./pbf/texupd/ApiServiceClientPb";
+import * as TexupdCreate from "./pbf/texupd/create_pb";
+import * as TexupdDelete from "./pbf/texupd/delete_pb";
+import * as TexupdSearch from "./pbf/texupd/search_pb";
+import * as TexupdUpdate from "./pbf/texupd/update_pb";
+
+export const Texupd = {
+  Client: TexupdClient.APIClient,
+  Create: {
+    I: TexupdCreate.CreateI,
+    O: TexupdCreate.CreateO,
+  },
+  Delete: {
+    I: TexupdDelete.DeleteI,
+    O: TexupdDelete.DeleteO,
+  },
+  Search: {
+    I: TexupdSearch.SearchI,
+    O: TexupdSearch.SearchO,
+  },
+  Update: {
+    I: TexupdUpdate.UpdateI,
+    O: TexupdUpdate.UpdateO,
+  },
+};
+
+// -------------------------------------------------------------------------- //
+
+// -------------------------------------------------------------------------- //
+
 import * as TimelineClient from "./pbf/timeline/ApiServiceClientPb";
 import * as TimelineCreate from "./pbf/timeline/create_pb";
 import * as TimelineDelete from "./pbf/timeline/delete_pb";
