@@ -7,6 +7,36 @@
 
 // -------------------------------------------------------------------------- //
 
+import * as AudienceClient from "./pbf/audience/ApiServiceClientPb";
+import * as AudienceCreate from "./pbf/audience/create_pb";
+import * as AudienceDelete from "./pbf/audience/delete_pb";
+import * as AudienceSearch from "./pbf/audience/search_pb";
+import * as AudienceUpdate from "./pbf/audience/update_pb";
+
+export const Audience = {
+  Client: AudienceClient.APIClient,
+  Create: {
+    I: AudienceCreate.CreateI,
+    O: AudienceCreate.CreateO,
+  },
+  Delete: {
+    I: AudienceDelete.DeleteI,
+    O: AudienceDelete.DeleteO,
+  },
+  Search: {
+    I: AudienceSearch.SearchI,
+    O: AudienceSearch.SearchO,
+  },
+  Update: {
+    I: AudienceUpdate.UpdateI,
+    O: AudienceUpdate.UpdateO,
+  },
+};
+
+// -------------------------------------------------------------------------- //
+
+// -------------------------------------------------------------------------- //
+
 import * as MetricClient from "./pbf/metric/ApiServiceClientPb";
 import * as MetricCreate from "./pbf/metric/create_pb";
 import * as MetricDelete from "./pbf/metric/delete_pb";
