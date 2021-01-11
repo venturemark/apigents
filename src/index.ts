@@ -37,6 +37,36 @@ export const Audience = {
 
 // -------------------------------------------------------------------------- //
 
+import * as MessageClient from "./pbf/message/ApiServiceClientPb";
+import * as MessageCreate from "./pbf/message/create_pb";
+import * as MessageDelete from "./pbf/message/delete_pb";
+import * as MessageSearch from "./pbf/message/search_pb";
+import * as MessageUpdate from "./pbf/message/update_pb";
+
+export const Message = {
+  Client: MessageClient.APIClient,
+  Create: {
+    I: MessageCreate.CreateI,
+    O: MessageCreate.CreateO,
+  },
+  Delete: {
+    I: MessageDelete.DeleteI,
+    O: MessageDelete.DeleteO,
+  },
+  Search: {
+    I: MessageSearch.SearchI,
+    O: MessageSearch.SearchO,
+  },
+  Update: {
+    I: MessageUpdate.UpdateI,
+    O: MessageUpdate.UpdateO,
+  },
+};
+
+// -------------------------------------------------------------------------- //
+
+// -------------------------------------------------------------------------- //
+
 import * as MetricClient from "./pbf/metric/ApiServiceClientPb";
 import * as MetricCreate from "./pbf/metric/create_pb";
 import * as MetricDelete from "./pbf/metric/delete_pb";
