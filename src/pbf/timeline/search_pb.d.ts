@@ -279,8 +279,14 @@ export namespace SearchO_Obj {
 }
 
 export class SearchO_Obj_Property extends jspb.Message {
+  getDesc(): string;
+  setDesc(value: string): SearchO_Obj_Property;
+
   getName(): string;
   setName(value: string): SearchO_Obj_Property;
+
+  getStat(): string;
+  setStat(value: string): SearchO_Obj_Property;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SearchO_Obj_Property.AsObject;
@@ -301,6 +307,8 @@ export class SearchO_Obj_Property extends jspb.Message {
 
 export namespace SearchO_Obj_Property {
   export type AsObject = {
+    desc: string;
     name: string;
+    stat: string;
   };
 }
