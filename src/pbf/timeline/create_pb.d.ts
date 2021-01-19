@@ -88,6 +88,9 @@ export namespace CreateI_Obj {
 }
 
 export class CreateI_Obj_Property extends jspb.Message {
+  getDesc(): string;
+  setDesc(value: string): CreateI_Obj_Property;
+
   getName(): string;
   setName(value: string): CreateI_Obj_Property;
 
@@ -110,6 +113,7 @@ export class CreateI_Obj_Property extends jspb.Message {
 
 export namespace CreateI_Obj_Property {
   export type AsObject = {
+    desc: string;
     name: string;
   };
 }
