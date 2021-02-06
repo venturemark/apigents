@@ -67,66 +67,6 @@ export const Message = {
 
 // -------------------------------------------------------------------------- //
 
-import * as MetricClient from "./pbf/metric/ApiServiceClientPb";
-import * as MetricCreate from "./pbf/metric/create_pb";
-import * as MetricDelete from "./pbf/metric/delete_pb";
-import * as MetricSearch from "./pbf/metric/search_pb";
-import * as MetricUpdate from "./pbf/metric/update_pb";
-
-export const Metric = {
-  Client: MetricClient.APIClient,
-  Create: {
-    I: MetricCreate.CreateI,
-    O: MetricCreate.CreateO,
-  },
-  Delete: {
-    I: MetricDelete.DeleteI,
-    O: MetricDelete.DeleteO,
-  },
-  Search: {
-    I: MetricSearch.SearchI,
-    O: MetricSearch.SearchO,
-  },
-  Update: {
-    I: MetricUpdate.UpdateI,
-    O: MetricUpdate.UpdateO,
-  },
-};
-
-// -------------------------------------------------------------------------- //
-
-// -------------------------------------------------------------------------- //
-
-import * as MetupdClient from "./pbf/metupd/ApiServiceClientPb";
-import * as MetupdCreate from "./pbf/metupd/create_pb";
-import * as MetupdDelete from "./pbf/metupd/delete_pb";
-import * as MetupdSearch from "./pbf/metupd/search_pb";
-import * as MetupdUpdate from "./pbf/metupd/update_pb";
-
-export const Metupd = {
-  Client: MetupdClient.APIClient,
-  Create: {
-    I: MetupdCreate.CreateI,
-    O: MetupdCreate.CreateO,
-  },
-  Delete: {
-    I: MetupdDelete.DeleteI,
-    O: MetupdDelete.DeleteO,
-  },
-  Search: {
-    I: MetupdSearch.SearchI,
-    O: MetupdSearch.SearchO,
-  },
-  Update: {
-    I: MetupdUpdate.UpdateI,
-    O: MetupdUpdate.UpdateO,
-  },
-};
-
-// -------------------------------------------------------------------------- //
-
-// -------------------------------------------------------------------------- //
-
 import * as TexupdClient from "./pbf/texupd/ApiServiceClientPb";
 import * as TexupdCreate from "./pbf/texupd/create_pb";
 import * as TexupdDelete from "./pbf/texupd/delete_pb";
