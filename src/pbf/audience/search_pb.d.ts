@@ -282,6 +282,11 @@ export class SearchO_Obj_Property extends jspb.Message {
   getName(): string;
   setName(value: string): SearchO_Obj_Property;
 
+  getTmlnList(): Array<string>;
+  setTmlnList(value: Array<string>): SearchO_Obj_Property;
+  clearTmlnList(): SearchO_Obj_Property;
+  addTmln(value: string, index?: number): SearchO_Obj_Property;
+
   getUserList(): Array<string>;
   setUserList(value: Array<string>): SearchO_Obj_Property;
   clearUserList(): SearchO_Obj_Property;
@@ -307,6 +312,7 @@ export class SearchO_Obj_Property extends jspb.Message {
 export namespace SearchO_Obj_Property {
   export type AsObject = {
     name: string;
+    tmlnList: Array<string>;
     userList: Array<string>;
   };
 }

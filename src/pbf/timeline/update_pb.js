@@ -765,22 +765,22 @@ proto.timeline.UpdateI_Obj_Property.prototype.serializeBinary = function() {
  */
 proto.timeline.UpdateI_Obj_Property.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getDesc();
-  if (f.length > 0) {
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getName();
-  if (f.length > 0) {
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getStat();
-  if (f.length > 0) {
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
     writer.writeString(
       3,
       f
@@ -803,7 +803,25 @@ proto.timeline.UpdateI_Obj_Property.prototype.getDesc = function() {
  * @return {!proto.timeline.UpdateI_Obj_Property} returns this
  */
 proto.timeline.UpdateI_Obj_Property.prototype.setDesc = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.timeline.UpdateI_Obj_Property} returns this
+ */
+proto.timeline.UpdateI_Obj_Property.prototype.clearDesc = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.timeline.UpdateI_Obj_Property.prototype.hasDesc = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -821,7 +839,25 @@ proto.timeline.UpdateI_Obj_Property.prototype.getName = function() {
  * @return {!proto.timeline.UpdateI_Obj_Property} returns this
  */
 proto.timeline.UpdateI_Obj_Property.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.timeline.UpdateI_Obj_Property} returns this
+ */
+proto.timeline.UpdateI_Obj_Property.prototype.clearName = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.timeline.UpdateI_Obj_Property.prototype.hasName = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -839,7 +875,25 @@ proto.timeline.UpdateI_Obj_Property.prototype.getStat = function() {
  * @return {!proto.timeline.UpdateI_Obj_Property} returns this
  */
 proto.timeline.UpdateI_Obj_Property.prototype.setStat = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.timeline.UpdateI_Obj_Property} returns this
+ */
+proto.timeline.UpdateI_Obj_Property.prototype.clearStat = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.timeline.UpdateI_Obj_Property.prototype.hasStat = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

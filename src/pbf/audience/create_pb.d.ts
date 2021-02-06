@@ -91,6 +91,11 @@ export class CreateI_Obj_Property extends jspb.Message {
   getName(): string;
   setName(value: string): CreateI_Obj_Property;
 
+  getTmlnList(): Array<string>;
+  setTmlnList(value: Array<string>): CreateI_Obj_Property;
+  clearTmlnList(): CreateI_Obj_Property;
+  addTmln(value: string, index?: number): CreateI_Obj_Property;
+
   getUserList(): Array<string>;
   setUserList(value: Array<string>): CreateI_Obj_Property;
   clearUserList(): CreateI_Obj_Property;
@@ -116,6 +121,7 @@ export class CreateI_Obj_Property extends jspb.Message {
 export namespace CreateI_Obj_Property {
   export type AsObject = {
     name: string;
+    tmlnList: Array<string>;
     userList: Array<string>;
   };
 }

@@ -97,6 +97,12 @@ export class UpdateI_Obj_Property extends jspb.Message {
   getStat(): string;
   setStat(value: string): UpdateI_Obj_Property;
 
+  getDescCase(): UpdateI_Obj_Property.DescCase;
+
+  getNameCase(): UpdateI_Obj_Property.NameCase;
+
+  getStatCase(): UpdateI_Obj_Property.StatCase;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateI_Obj_Property.AsObject;
   static toObject(
@@ -120,6 +126,21 @@ export namespace UpdateI_Obj_Property {
     name: string;
     stat: string;
   };
+
+  export enum DescCase {
+    _DESC_NOT_SET = 0,
+    DESC = 1,
+  }
+
+  export enum NameCase {
+    _NAME_NOT_SET = 0,
+    NAME = 2,
+  }
+
+  export enum StatCase {
+    _STAT_NOT_SET = 0,
+    STAT = 3,
+  }
 }
 
 export class UpdateO extends jspb.Message {
