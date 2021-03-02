@@ -67,6 +67,36 @@ export const Message = {
 
 // -------------------------------------------------------------------------- //
 
+import * as RoleClient from "./pbf/role/ApiServiceClientPb";
+import * as RoleCreate from "./pbf/role/create_pb";
+import * as RoleDelete from "./pbf/role/delete_pb";
+import * as RoleSearch from "./pbf/role/search_pb";
+import * as RoleUpdate from "./pbf/role/update_pb";
+
+export const Role = {
+  Client: RoleClient.APIClient,
+  Create: {
+    I: RoleCreate.CreateI,
+    O: RoleCreate.CreateO,
+  },
+  Delete: {
+    I: RoleDelete.DeleteI,
+    O: RoleDelete.DeleteO,
+  },
+  Search: {
+    I: RoleSearch.SearchI,
+    O: RoleSearch.SearchO,
+  },
+  Update: {
+    I: RoleUpdate.UpdateI,
+    O: RoleUpdate.UpdateO,
+  },
+};
+
+// -------------------------------------------------------------------------- //
+
+// -------------------------------------------------------------------------- //
+
 import * as TexupdClient from "./pbf/texupd/ApiServiceClientPb";
 import * as TexupdCreate from "./pbf/texupd/create_pb";
 import * as TexupdDelete from "./pbf/texupd/delete_pb";
