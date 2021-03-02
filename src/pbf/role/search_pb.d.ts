@@ -285,9 +285,6 @@ export class SearchO_Obj_Property extends jspb.Message {
   getRes(): string;
   setRes(value: string): SearchO_Obj_Property;
 
-  getSub(): string;
-  setSub(value: string): SearchO_Obj_Property;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SearchO_Obj_Property.AsObject;
   static toObject(
@@ -309,6 +306,5 @@ export namespace SearchO_Obj_Property {
   export type AsObject = {
     kin: string;
     res: string;
-    sub: string;
   };
 }

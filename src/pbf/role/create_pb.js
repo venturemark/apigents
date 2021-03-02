@@ -695,8 +695,7 @@ proto.role.CreateI_Obj_Property.prototype.toObject = function(opt_includeInstanc
 proto.role.CreateI_Obj_Property.toObject = function(includeInstance, msg) {
   var f, obj = {
     kin: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    res: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    sub: jspb.Message.getFieldWithDefault(msg, 3, "")
+    res: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -741,10 +740,6 @@ proto.role.CreateI_Obj_Property.deserializeBinaryFromReader = function(msg, read
       var value = /** @type {string} */ (reader.readString());
       msg.setRes(value);
       break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSub(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -788,13 +783,6 @@ proto.role.CreateI_Obj_Property.serializeBinaryToWriter = function(message, writ
       f
     );
   }
-  f = message.getSub();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
 };
 
 
@@ -831,24 +819,6 @@ proto.role.CreateI_Obj_Property.prototype.getRes = function() {
  */
 proto.role.CreateI_Obj_Property.prototype.setRes = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string sub = 3;
- * @return {string}
- */
-proto.role.CreateI_Obj_Property.prototype.getSub = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.role.CreateI_Obj_Property} returns this
- */
-proto.role.CreateI_Obj_Property.prototype.setSub = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

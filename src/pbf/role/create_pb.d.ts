@@ -94,9 +94,6 @@ export class CreateI_Obj_Property extends jspb.Message {
   getRes(): string;
   setRes(value: string): CreateI_Obj_Property;
 
-  getSub(): string;
-  setSub(value: string): CreateI_Obj_Property;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateI_Obj_Property.AsObject;
   static toObject(
@@ -118,7 +115,6 @@ export namespace CreateI_Obj_Property {
   export type AsObject = {
     kin: string;
     res: string;
-    sub: string;
   };
 }
 
