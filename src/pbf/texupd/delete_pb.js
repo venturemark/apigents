@@ -29,7 +29,7 @@ goog.exportSymbol('proto.texupd.DeleteO_Obj', null, global);
  * @constructor
  */
 proto.texupd.DeleteI = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.texupd.DeleteI.repeatedFields_, null);
 };
 goog.inherits(proto.texupd.DeleteI, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -92,7 +92,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.texupd.DeleteO = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.texupd.DeleteO.repeatedFields_, null);
 };
 goog.inherits(proto.texupd.DeleteO, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -145,6 +145,13 @@ if (goog.DEBUG && !COMPILED) {
   proto.texupd.DeleteO_Obj.displayName = 'proto.texupd.DeleteO_Obj';
 }
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.texupd.DeleteI.repeatedFields_ = [2];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -177,7 +184,8 @@ proto.texupd.DeleteI.prototype.toObject = function(opt_includeInstance) {
 proto.texupd.DeleteI.toObject = function(includeInstance, msg) {
   var f, obj = {
     api: (f = msg.getApi()) && proto.texupd.DeleteI_API.toObject(includeInstance, f),
-    obj: (f = msg.getObj()) && proto.texupd.DeleteI_Obj.toObject(includeInstance, f)
+    objList: jspb.Message.toObjectList(msg.getObjList(),
+    proto.texupd.DeleteI_Obj.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -222,7 +230,7 @@ proto.texupd.DeleteI.deserializeBinaryFromReader = function(msg, reader) {
     case 2:
       var value = new proto.texupd.DeleteI_Obj;
       reader.readMessage(value,proto.texupd.DeleteI_Obj.deserializeBinaryFromReader);
-      msg.setObj(value);
+      msg.addObj(value);
       break;
     default:
       reader.skipField();
@@ -261,9 +269,9 @@ proto.texupd.DeleteI.serializeBinaryToWriter = function(message, writer) {
       proto.texupd.DeleteI_API.serializeBinaryToWriter
     );
   }
-  f = message.getObj();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getObjList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       2,
       f,
       proto.texupd.DeleteI_Obj.serializeBinaryToWriter
@@ -310,39 +318,40 @@ proto.texupd.DeleteI.prototype.hasApi = function() {
 
 
 /**
- * optional DeleteI_Obj obj = 2;
- * @return {?proto.texupd.DeleteI_Obj}
+ * repeated DeleteI_Obj obj = 2;
+ * @return {!Array<!proto.texupd.DeleteI_Obj>}
  */
-proto.texupd.DeleteI.prototype.getObj = function() {
-  return /** @type{?proto.texupd.DeleteI_Obj} */ (
-    jspb.Message.getWrapperField(this, proto.texupd.DeleteI_Obj, 2));
+proto.texupd.DeleteI.prototype.getObjList = function() {
+  return /** @type{!Array<!proto.texupd.DeleteI_Obj>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.texupd.DeleteI_Obj, 2));
 };
 
 
 /**
- * @param {?proto.texupd.DeleteI_Obj|undefined} value
+ * @param {!Array<!proto.texupd.DeleteI_Obj>} value
  * @return {!proto.texupd.DeleteI} returns this
 */
-proto.texupd.DeleteI.prototype.setObj = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+proto.texupd.DeleteI.prototype.setObjList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.texupd.DeleteI_Obj=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.texupd.DeleteI_Obj}
+ */
+proto.texupd.DeleteI.prototype.addObj = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.texupd.DeleteI_Obj, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.texupd.DeleteI} returns this
  */
-proto.texupd.DeleteI.prototype.clearObj = function() {
-  return this.setObj(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.texupd.DeleteI.prototype.hasObj = function() {
-  return jspb.Message.getField(this, 2) != null;
+proto.texupd.DeleteI.prototype.clearObjList = function() {
+  return this.setObjList([]);
 };
 
 
@@ -581,6 +590,13 @@ proto.texupd.DeleteI_Obj.prototype.clearMetadataMap = function() {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.texupd.DeleteO.repeatedFields_ = [2];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -613,7 +629,8 @@ proto.texupd.DeleteO.prototype.toObject = function(opt_includeInstance) {
 proto.texupd.DeleteO.toObject = function(includeInstance, msg) {
   var f, obj = {
     api: (f = msg.getApi()) && proto.texupd.DeleteO_API.toObject(includeInstance, f),
-    obj: (f = msg.getObj()) && proto.texupd.DeleteO_Obj.toObject(includeInstance, f)
+    objList: jspb.Message.toObjectList(msg.getObjList(),
+    proto.texupd.DeleteO_Obj.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -658,7 +675,7 @@ proto.texupd.DeleteO.deserializeBinaryFromReader = function(msg, reader) {
     case 2:
       var value = new proto.texupd.DeleteO_Obj;
       reader.readMessage(value,proto.texupd.DeleteO_Obj.deserializeBinaryFromReader);
-      msg.setObj(value);
+      msg.addObj(value);
       break;
     default:
       reader.skipField();
@@ -697,9 +714,9 @@ proto.texupd.DeleteO.serializeBinaryToWriter = function(message, writer) {
       proto.texupd.DeleteO_API.serializeBinaryToWriter
     );
   }
-  f = message.getObj();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getObjList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       2,
       f,
       proto.texupd.DeleteO_Obj.serializeBinaryToWriter
@@ -746,39 +763,40 @@ proto.texupd.DeleteO.prototype.hasApi = function() {
 
 
 /**
- * optional DeleteO_Obj obj = 2;
- * @return {?proto.texupd.DeleteO_Obj}
+ * repeated DeleteO_Obj obj = 2;
+ * @return {!Array<!proto.texupd.DeleteO_Obj>}
  */
-proto.texupd.DeleteO.prototype.getObj = function() {
-  return /** @type{?proto.texupd.DeleteO_Obj} */ (
-    jspb.Message.getWrapperField(this, proto.texupd.DeleteO_Obj, 2));
+proto.texupd.DeleteO.prototype.getObjList = function() {
+  return /** @type{!Array<!proto.texupd.DeleteO_Obj>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.texupd.DeleteO_Obj, 2));
 };
 
 
 /**
- * @param {?proto.texupd.DeleteO_Obj|undefined} value
+ * @param {!Array<!proto.texupd.DeleteO_Obj>} value
  * @return {!proto.texupd.DeleteO} returns this
 */
-proto.texupd.DeleteO.prototype.setObj = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+proto.texupd.DeleteO.prototype.setObjList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.texupd.DeleteO_Obj=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.texupd.DeleteO_Obj}
+ */
+proto.texupd.DeleteO.prototype.addObj = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.texupd.DeleteO_Obj, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.texupd.DeleteO} returns this
  */
-proto.texupd.DeleteO.prototype.clearObj = function() {
-  return this.setObj(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.texupd.DeleteO.prototype.hasObj = function() {
-  return jspb.Message.getField(this, 2) != null;
+proto.texupd.DeleteO.prototype.clearObjList = function() {
+  return this.setObjList([]);
 };
 
 

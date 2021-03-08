@@ -30,7 +30,7 @@ goog.exportSymbol('proto.texupd.CreateO_Obj', null, global);
  * @constructor
  */
 proto.texupd.CreateI = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.texupd.CreateI.repeatedFields_, null);
 };
 goog.inherits(proto.texupd.CreateI, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -114,7 +114,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.texupd.CreateO = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.texupd.CreateO.repeatedFields_, null);
 };
 goog.inherits(proto.texupd.CreateO, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -167,6 +167,13 @@ if (goog.DEBUG && !COMPILED) {
   proto.texupd.CreateO_Obj.displayName = 'proto.texupd.CreateO_Obj';
 }
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.texupd.CreateI.repeatedFields_ = [2];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -199,7 +206,8 @@ proto.texupd.CreateI.prototype.toObject = function(opt_includeInstance) {
 proto.texupd.CreateI.toObject = function(includeInstance, msg) {
   var f, obj = {
     api: (f = msg.getApi()) && proto.texupd.CreateI_API.toObject(includeInstance, f),
-    obj: (f = msg.getObj()) && proto.texupd.CreateI_Obj.toObject(includeInstance, f)
+    objList: jspb.Message.toObjectList(msg.getObjList(),
+    proto.texupd.CreateI_Obj.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -244,7 +252,7 @@ proto.texupd.CreateI.deserializeBinaryFromReader = function(msg, reader) {
     case 2:
       var value = new proto.texupd.CreateI_Obj;
       reader.readMessage(value,proto.texupd.CreateI_Obj.deserializeBinaryFromReader);
-      msg.setObj(value);
+      msg.addObj(value);
       break;
     default:
       reader.skipField();
@@ -283,9 +291,9 @@ proto.texupd.CreateI.serializeBinaryToWriter = function(message, writer) {
       proto.texupd.CreateI_API.serializeBinaryToWriter
     );
   }
-  f = message.getObj();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getObjList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       2,
       f,
       proto.texupd.CreateI_Obj.serializeBinaryToWriter
@@ -332,39 +340,40 @@ proto.texupd.CreateI.prototype.hasApi = function() {
 
 
 /**
- * optional CreateI_Obj obj = 2;
- * @return {?proto.texupd.CreateI_Obj}
+ * repeated CreateI_Obj obj = 2;
+ * @return {!Array<!proto.texupd.CreateI_Obj>}
  */
-proto.texupd.CreateI.prototype.getObj = function() {
-  return /** @type{?proto.texupd.CreateI_Obj} */ (
-    jspb.Message.getWrapperField(this, proto.texupd.CreateI_Obj, 2));
+proto.texupd.CreateI.prototype.getObjList = function() {
+  return /** @type{!Array<!proto.texupd.CreateI_Obj>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.texupd.CreateI_Obj, 2));
 };
 
 
 /**
- * @param {?proto.texupd.CreateI_Obj|undefined} value
+ * @param {!Array<!proto.texupd.CreateI_Obj>} value
  * @return {!proto.texupd.CreateI} returns this
 */
-proto.texupd.CreateI.prototype.setObj = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+proto.texupd.CreateI.prototype.setObjList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.texupd.CreateI_Obj=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.texupd.CreateI_Obj}
+ */
+proto.texupd.CreateI.prototype.addObj = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.texupd.CreateI_Obj, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.texupd.CreateI} returns this
  */
-proto.texupd.CreateI.prototype.clearObj = function() {
-  return this.setObj(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.texupd.CreateI.prototype.hasObj = function() {
-  return jspb.Message.getField(this, 2) != null;
+proto.texupd.CreateI.prototype.clearObjList = function() {
+  return this.setObjList([]);
 };
 
 
@@ -784,6 +793,13 @@ proto.texupd.CreateI_Obj_Property.prototype.setText = function(value) {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.texupd.CreateO.repeatedFields_ = [2];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -816,7 +832,8 @@ proto.texupd.CreateO.prototype.toObject = function(opt_includeInstance) {
 proto.texupd.CreateO.toObject = function(includeInstance, msg) {
   var f, obj = {
     api: (f = msg.getApi()) && proto.texupd.CreateO_API.toObject(includeInstance, f),
-    obj: (f = msg.getObj()) && proto.texupd.CreateO_Obj.toObject(includeInstance, f)
+    objList: jspb.Message.toObjectList(msg.getObjList(),
+    proto.texupd.CreateO_Obj.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -861,7 +878,7 @@ proto.texupd.CreateO.deserializeBinaryFromReader = function(msg, reader) {
     case 2:
       var value = new proto.texupd.CreateO_Obj;
       reader.readMessage(value,proto.texupd.CreateO_Obj.deserializeBinaryFromReader);
-      msg.setObj(value);
+      msg.addObj(value);
       break;
     default:
       reader.skipField();
@@ -900,9 +917,9 @@ proto.texupd.CreateO.serializeBinaryToWriter = function(message, writer) {
       proto.texupd.CreateO_API.serializeBinaryToWriter
     );
   }
-  f = message.getObj();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getObjList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       2,
       f,
       proto.texupd.CreateO_Obj.serializeBinaryToWriter
@@ -949,39 +966,40 @@ proto.texupd.CreateO.prototype.hasApi = function() {
 
 
 /**
- * optional CreateO_Obj obj = 2;
- * @return {?proto.texupd.CreateO_Obj}
+ * repeated CreateO_Obj obj = 2;
+ * @return {!Array<!proto.texupd.CreateO_Obj>}
  */
-proto.texupd.CreateO.prototype.getObj = function() {
-  return /** @type{?proto.texupd.CreateO_Obj} */ (
-    jspb.Message.getWrapperField(this, proto.texupd.CreateO_Obj, 2));
+proto.texupd.CreateO.prototype.getObjList = function() {
+  return /** @type{!Array<!proto.texupd.CreateO_Obj>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.texupd.CreateO_Obj, 2));
 };
 
 
 /**
- * @param {?proto.texupd.CreateO_Obj|undefined} value
+ * @param {!Array<!proto.texupd.CreateO_Obj>} value
  * @return {!proto.texupd.CreateO} returns this
 */
-proto.texupd.CreateO.prototype.setObj = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+proto.texupd.CreateO.prototype.setObjList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.texupd.CreateO_Obj=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.texupd.CreateO_Obj}
+ */
+proto.texupd.CreateO.prototype.addObj = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.texupd.CreateO_Obj, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.texupd.CreateO} returns this
  */
-proto.texupd.CreateO.prototype.clearObj = function() {
-  return this.setObj(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.texupd.CreateO.prototype.hasObj = function() {
-  return jspb.Message.getField(this, 2) != null;
+proto.texupd.CreateO.prototype.clearObjList = function() {
+  return this.setObjList([]);
 };
 
 

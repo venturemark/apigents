@@ -30,7 +30,7 @@ goog.exportSymbol('proto.message.CreateO_Obj', null, global);
  * @constructor
  */
 proto.message.CreateI = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.message.CreateI.repeatedFields_, null);
 };
 goog.inherits(proto.message.CreateI, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -114,7 +114,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.message.CreateO = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.message.CreateO.repeatedFields_, null);
 };
 goog.inherits(proto.message.CreateO, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -167,6 +167,13 @@ if (goog.DEBUG && !COMPILED) {
   proto.message.CreateO_Obj.displayName = 'proto.message.CreateO_Obj';
 }
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.message.CreateI.repeatedFields_ = [2];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -199,7 +206,8 @@ proto.message.CreateI.prototype.toObject = function(opt_includeInstance) {
 proto.message.CreateI.toObject = function(includeInstance, msg) {
   var f, obj = {
     api: (f = msg.getApi()) && proto.message.CreateI_API.toObject(includeInstance, f),
-    obj: (f = msg.getObj()) && proto.message.CreateI_Obj.toObject(includeInstance, f)
+    objList: jspb.Message.toObjectList(msg.getObjList(),
+    proto.message.CreateI_Obj.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -244,7 +252,7 @@ proto.message.CreateI.deserializeBinaryFromReader = function(msg, reader) {
     case 2:
       var value = new proto.message.CreateI_Obj;
       reader.readMessage(value,proto.message.CreateI_Obj.deserializeBinaryFromReader);
-      msg.setObj(value);
+      msg.addObj(value);
       break;
     default:
       reader.skipField();
@@ -283,9 +291,9 @@ proto.message.CreateI.serializeBinaryToWriter = function(message, writer) {
       proto.message.CreateI_API.serializeBinaryToWriter
     );
   }
-  f = message.getObj();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getObjList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       2,
       f,
       proto.message.CreateI_Obj.serializeBinaryToWriter
@@ -332,39 +340,40 @@ proto.message.CreateI.prototype.hasApi = function() {
 
 
 /**
- * optional CreateI_Obj obj = 2;
- * @return {?proto.message.CreateI_Obj}
+ * repeated CreateI_Obj obj = 2;
+ * @return {!Array<!proto.message.CreateI_Obj>}
  */
-proto.message.CreateI.prototype.getObj = function() {
-  return /** @type{?proto.message.CreateI_Obj} */ (
-    jspb.Message.getWrapperField(this, proto.message.CreateI_Obj, 2));
+proto.message.CreateI.prototype.getObjList = function() {
+  return /** @type{!Array<!proto.message.CreateI_Obj>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.message.CreateI_Obj, 2));
 };
 
 
 /**
- * @param {?proto.message.CreateI_Obj|undefined} value
+ * @param {!Array<!proto.message.CreateI_Obj>} value
  * @return {!proto.message.CreateI} returns this
 */
-proto.message.CreateI.prototype.setObj = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+proto.message.CreateI.prototype.setObjList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.message.CreateI_Obj=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.message.CreateI_Obj}
+ */
+proto.message.CreateI.prototype.addObj = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.message.CreateI_Obj, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.message.CreateI} returns this
  */
-proto.message.CreateI.prototype.clearObj = function() {
-  return this.setObj(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.message.CreateI.prototype.hasObj = function() {
-  return jspb.Message.getField(this, 2) != null;
+proto.message.CreateI.prototype.clearObjList = function() {
+  return this.setObjList([]);
 };
 
 
@@ -814,6 +823,13 @@ proto.message.CreateI_Obj_Property.prototype.setReid = function(value) {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.message.CreateO.repeatedFields_ = [2];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -846,7 +862,8 @@ proto.message.CreateO.prototype.toObject = function(opt_includeInstance) {
 proto.message.CreateO.toObject = function(includeInstance, msg) {
   var f, obj = {
     api: (f = msg.getApi()) && proto.message.CreateO_API.toObject(includeInstance, f),
-    obj: (f = msg.getObj()) && proto.message.CreateO_Obj.toObject(includeInstance, f)
+    objList: jspb.Message.toObjectList(msg.getObjList(),
+    proto.message.CreateO_Obj.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -891,7 +908,7 @@ proto.message.CreateO.deserializeBinaryFromReader = function(msg, reader) {
     case 2:
       var value = new proto.message.CreateO_Obj;
       reader.readMessage(value,proto.message.CreateO_Obj.deserializeBinaryFromReader);
-      msg.setObj(value);
+      msg.addObj(value);
       break;
     default:
       reader.skipField();
@@ -930,9 +947,9 @@ proto.message.CreateO.serializeBinaryToWriter = function(message, writer) {
       proto.message.CreateO_API.serializeBinaryToWriter
     );
   }
-  f = message.getObj();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getObjList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       2,
       f,
       proto.message.CreateO_Obj.serializeBinaryToWriter
@@ -979,39 +996,40 @@ proto.message.CreateO.prototype.hasApi = function() {
 
 
 /**
- * optional CreateO_Obj obj = 2;
- * @return {?proto.message.CreateO_Obj}
+ * repeated CreateO_Obj obj = 2;
+ * @return {!Array<!proto.message.CreateO_Obj>}
  */
-proto.message.CreateO.prototype.getObj = function() {
-  return /** @type{?proto.message.CreateO_Obj} */ (
-    jspb.Message.getWrapperField(this, proto.message.CreateO_Obj, 2));
+proto.message.CreateO.prototype.getObjList = function() {
+  return /** @type{!Array<!proto.message.CreateO_Obj>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.message.CreateO_Obj, 2));
 };
 
 
 /**
- * @param {?proto.message.CreateO_Obj|undefined} value
+ * @param {!Array<!proto.message.CreateO_Obj>} value
  * @return {!proto.message.CreateO} returns this
 */
-proto.message.CreateO.prototype.setObj = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+proto.message.CreateO.prototype.setObjList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.message.CreateO_Obj=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.message.CreateO_Obj}
+ */
+proto.message.CreateO.prototype.addObj = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.message.CreateO_Obj, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.message.CreateO} returns this
  */
-proto.message.CreateO.prototype.clearObj = function() {
-  return this.setObj(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.message.CreateO.prototype.hasObj = function() {
-  return jspb.Message.getField(this, 2) != null;
+proto.message.CreateO.prototype.clearObjList = function() {
+  return this.setObjList([]);
 };
 
 

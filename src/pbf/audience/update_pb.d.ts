@@ -6,10 +6,10 @@ export class UpdateI extends jspb.Message {
   hasApi(): boolean;
   clearApi(): UpdateI;
 
-  getObj(): UpdateI_Obj | undefined;
-  setObj(value?: UpdateI_Obj): UpdateI;
-  hasObj(): boolean;
-  clearObj(): UpdateI;
+  getObjList(): Array<UpdateI_Obj>;
+  setObjList(value: Array<UpdateI_Obj>): UpdateI;
+  clearObjList(): UpdateI;
+  addObj(value?: UpdateI_Obj, index?: number): UpdateI_Obj;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateI.AsObject;
@@ -28,7 +28,7 @@ export class UpdateI extends jspb.Message {
 export namespace UpdateI {
   export type AsObject = {
     api?: UpdateI_API.AsObject;
-    obj?: UpdateI_Obj.AsObject;
+    objList: Array<UpdateI_Obj.AsObject>;
   };
 }
 
@@ -138,10 +138,10 @@ export class UpdateO extends jspb.Message {
   hasApi(): boolean;
   clearApi(): UpdateO;
 
-  getObj(): UpdateO_Obj | undefined;
-  setObj(value?: UpdateO_Obj): UpdateO;
-  hasObj(): boolean;
-  clearObj(): UpdateO;
+  getObjList(): Array<UpdateO_Obj>;
+  setObjList(value: Array<UpdateO_Obj>): UpdateO;
+  clearObjList(): UpdateO;
+  addObj(value?: UpdateO_Obj, index?: number): UpdateO_Obj;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateO.AsObject;
@@ -160,7 +160,7 @@ export class UpdateO extends jspb.Message {
 export namespace UpdateO {
   export type AsObject = {
     api?: UpdateO_API.AsObject;
-    obj?: UpdateO_Obj.AsObject;
+    objList: Array<UpdateO_Obj.AsObject>;
   };
 }
 

@@ -29,7 +29,7 @@ goog.exportSymbol('proto.timeline.DeleteO_Obj', null, global);
  * @constructor
  */
 proto.timeline.DeleteI = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.timeline.DeleteI.repeatedFields_, null);
 };
 goog.inherits(proto.timeline.DeleteI, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -92,7 +92,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.timeline.DeleteO = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.timeline.DeleteO.repeatedFields_, null);
 };
 goog.inherits(proto.timeline.DeleteO, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -145,6 +145,13 @@ if (goog.DEBUG && !COMPILED) {
   proto.timeline.DeleteO_Obj.displayName = 'proto.timeline.DeleteO_Obj';
 }
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.timeline.DeleteI.repeatedFields_ = [2];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -177,7 +184,8 @@ proto.timeline.DeleteI.prototype.toObject = function(opt_includeInstance) {
 proto.timeline.DeleteI.toObject = function(includeInstance, msg) {
   var f, obj = {
     api: (f = msg.getApi()) && proto.timeline.DeleteI_API.toObject(includeInstance, f),
-    obj: (f = msg.getObj()) && proto.timeline.DeleteI_Obj.toObject(includeInstance, f)
+    objList: jspb.Message.toObjectList(msg.getObjList(),
+    proto.timeline.DeleteI_Obj.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -222,7 +230,7 @@ proto.timeline.DeleteI.deserializeBinaryFromReader = function(msg, reader) {
     case 2:
       var value = new proto.timeline.DeleteI_Obj;
       reader.readMessage(value,proto.timeline.DeleteI_Obj.deserializeBinaryFromReader);
-      msg.setObj(value);
+      msg.addObj(value);
       break;
     default:
       reader.skipField();
@@ -261,9 +269,9 @@ proto.timeline.DeleteI.serializeBinaryToWriter = function(message, writer) {
       proto.timeline.DeleteI_API.serializeBinaryToWriter
     );
   }
-  f = message.getObj();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getObjList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       2,
       f,
       proto.timeline.DeleteI_Obj.serializeBinaryToWriter
@@ -310,39 +318,40 @@ proto.timeline.DeleteI.prototype.hasApi = function() {
 
 
 /**
- * optional DeleteI_Obj obj = 2;
- * @return {?proto.timeline.DeleteI_Obj}
+ * repeated DeleteI_Obj obj = 2;
+ * @return {!Array<!proto.timeline.DeleteI_Obj>}
  */
-proto.timeline.DeleteI.prototype.getObj = function() {
-  return /** @type{?proto.timeline.DeleteI_Obj} */ (
-    jspb.Message.getWrapperField(this, proto.timeline.DeleteI_Obj, 2));
+proto.timeline.DeleteI.prototype.getObjList = function() {
+  return /** @type{!Array<!proto.timeline.DeleteI_Obj>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.timeline.DeleteI_Obj, 2));
 };
 
 
 /**
- * @param {?proto.timeline.DeleteI_Obj|undefined} value
+ * @param {!Array<!proto.timeline.DeleteI_Obj>} value
  * @return {!proto.timeline.DeleteI} returns this
 */
-proto.timeline.DeleteI.prototype.setObj = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+proto.timeline.DeleteI.prototype.setObjList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.timeline.DeleteI_Obj=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.timeline.DeleteI_Obj}
+ */
+proto.timeline.DeleteI.prototype.addObj = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.timeline.DeleteI_Obj, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.timeline.DeleteI} returns this
  */
-proto.timeline.DeleteI.prototype.clearObj = function() {
-  return this.setObj(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.timeline.DeleteI.prototype.hasObj = function() {
-  return jspb.Message.getField(this, 2) != null;
+proto.timeline.DeleteI.prototype.clearObjList = function() {
+  return this.setObjList([]);
 };
 
 
@@ -581,6 +590,13 @@ proto.timeline.DeleteI_Obj.prototype.clearMetadataMap = function() {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.timeline.DeleteO.repeatedFields_ = [2];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -613,7 +629,8 @@ proto.timeline.DeleteO.prototype.toObject = function(opt_includeInstance) {
 proto.timeline.DeleteO.toObject = function(includeInstance, msg) {
   var f, obj = {
     api: (f = msg.getApi()) && proto.timeline.DeleteO_API.toObject(includeInstance, f),
-    obj: (f = msg.getObj()) && proto.timeline.DeleteO_Obj.toObject(includeInstance, f)
+    objList: jspb.Message.toObjectList(msg.getObjList(),
+    proto.timeline.DeleteO_Obj.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -658,7 +675,7 @@ proto.timeline.DeleteO.deserializeBinaryFromReader = function(msg, reader) {
     case 2:
       var value = new proto.timeline.DeleteO_Obj;
       reader.readMessage(value,proto.timeline.DeleteO_Obj.deserializeBinaryFromReader);
-      msg.setObj(value);
+      msg.addObj(value);
       break;
     default:
       reader.skipField();
@@ -697,9 +714,9 @@ proto.timeline.DeleteO.serializeBinaryToWriter = function(message, writer) {
       proto.timeline.DeleteO_API.serializeBinaryToWriter
     );
   }
-  f = message.getObj();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getObjList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       2,
       f,
       proto.timeline.DeleteO_Obj.serializeBinaryToWriter
@@ -746,39 +763,40 @@ proto.timeline.DeleteO.prototype.hasApi = function() {
 
 
 /**
- * optional DeleteO_Obj obj = 2;
- * @return {?proto.timeline.DeleteO_Obj}
+ * repeated DeleteO_Obj obj = 2;
+ * @return {!Array<!proto.timeline.DeleteO_Obj>}
  */
-proto.timeline.DeleteO.prototype.getObj = function() {
-  return /** @type{?proto.timeline.DeleteO_Obj} */ (
-    jspb.Message.getWrapperField(this, proto.timeline.DeleteO_Obj, 2));
+proto.timeline.DeleteO.prototype.getObjList = function() {
+  return /** @type{!Array<!proto.timeline.DeleteO_Obj>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.timeline.DeleteO_Obj, 2));
 };
 
 
 /**
- * @param {?proto.timeline.DeleteO_Obj|undefined} value
+ * @param {!Array<!proto.timeline.DeleteO_Obj>} value
  * @return {!proto.timeline.DeleteO} returns this
 */
-proto.timeline.DeleteO.prototype.setObj = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+proto.timeline.DeleteO.prototype.setObjList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.timeline.DeleteO_Obj=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.timeline.DeleteO_Obj}
+ */
+proto.timeline.DeleteO.prototype.addObj = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.timeline.DeleteO_Obj, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.timeline.DeleteO} returns this
  */
-proto.timeline.DeleteO.prototype.clearObj = function() {
-  return this.setObj(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.timeline.DeleteO.prototype.hasObj = function() {
-  return jspb.Message.getField(this, 2) != null;
+proto.timeline.DeleteO.prototype.clearObjList = function() {
+  return this.setObjList([]);
 };
 
 
