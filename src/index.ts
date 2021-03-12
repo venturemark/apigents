@@ -184,3 +184,33 @@ export const Update = {
 };
 
 // -------------------------------------------------------------------------- //
+
+// -------------------------------------------------------------------------- //
+
+import * as VentureClient from "./pbf/venture/ApiServiceClientPb";
+import * as VentureCreate from "./pbf/venture/create_pb";
+import * as VentureDelete from "./pbf/venture/delete_pb";
+import * as VentureSearch from "./pbf/venture/search_pb";
+import * as VentureUpdate from "./pbf/venture/update_pb";
+
+export const Venture = {
+  Client: VentureClient.APIClient,
+  Create: {
+    I: VentureCreate.CreateI,
+    O: VentureCreate.CreateO,
+  },
+  Delete: {
+    I: VentureDelete.DeleteI,
+    O: VentureDelete.DeleteO,
+  },
+  Search: {
+    I: VentureSearch.SearchI,
+    O: VentureSearch.SearchO,
+  },
+  Update: {
+    I: VentureUpdate.UpdateI,
+    O: VentureUpdate.UpdateO,
+  },
+};
+
+// -------------------------------------------------------------------------- //
