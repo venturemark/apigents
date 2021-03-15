@@ -187,6 +187,36 @@ export const Update = {
 
 // -------------------------------------------------------------------------- //
 
+import * as UserClient from "./pbf/user/ApiServiceClientPb";
+import * as UserCreate from "./pbf/user/create_pb";
+import * as UserDelete from "./pbf/user/delete_pb";
+import * as UserSearch from "./pbf/user/search_pb";
+import * as UserUpdate from "./pbf/user/update_pb";
+
+export const User = {
+  Client: UserClient.APIClient,
+  Create: {
+    I: UserCreate.CreateI,
+    O: UserCreate.CreateO,
+  },
+  Delete: {
+    I: UserDelete.DeleteI,
+    O: UserDelete.DeleteO,
+  },
+  Search: {
+    I: UserSearch.SearchI,
+    O: UserSearch.SearchO,
+  },
+  Update: {
+    I: UserUpdate.UpdateI,
+    O: UserUpdate.UpdateO,
+  },
+};
+
+// -------------------------------------------------------------------------- //
+
+// -------------------------------------------------------------------------- //
+
 import * as VentureClient from "./pbf/venture/ApiServiceClientPb";
 import * as VentureCreate from "./pbf/venture/create_pb";
 import * as VentureDelete from "./pbf/venture/delete_pb";
