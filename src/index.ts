@@ -7,36 +7,6 @@
 
 // -------------------------------------------------------------------------- //
 
-import * as AudienceClient from "./pbf/audience/ApiServiceClientPb";
-import * as AudienceCreate from "./pbf/audience/create_pb";
-import * as AudienceDelete from "./pbf/audience/delete_pb";
-import * as AudienceSearch from "./pbf/audience/search_pb";
-import * as AudienceUpdate from "./pbf/audience/update_pb";
-
-export const Audience = {
-  Client: AudienceClient.APIClient,
-  Create: {
-    I: AudienceCreate.CreateI,
-    O: AudienceCreate.CreateO,
-  },
-  Delete: {
-    I: AudienceDelete.DeleteI,
-    O: AudienceDelete.DeleteO,
-  },
-  Search: {
-    I: AudienceSearch.SearchI,
-    O: AudienceSearch.SearchO,
-  },
-  Update: {
-    I: AudienceUpdate.UpdateI,
-    O: AudienceUpdate.UpdateO,
-  },
-};
-
-// -------------------------------------------------------------------------- //
-
-// -------------------------------------------------------------------------- //
-
 import * as MessageClient from "./pbf/message/ApiServiceClientPb";
 import * as MessageCreate from "./pbf/message/create_pb";
 import * as MessageDelete from "./pbf/message/delete_pb";
