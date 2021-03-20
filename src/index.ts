@@ -7,6 +7,36 @@
 
 // -------------------------------------------------------------------------- //
 
+import * as InviteClient from "./pbf/invite/ApiServiceClientPb";
+import * as InviteCreate from "./pbf/invite/create_pb";
+import * as InviteDelete from "./pbf/invite/delete_pb";
+import * as InviteSearch from "./pbf/invite/search_pb";
+import * as InviteUpdate from "./pbf/invite/update_pb";
+
+export const Invite = {
+  Client: InviteClient.APIClient,
+  Create: {
+    I: InviteCreate.CreateI,
+    O: InviteCreate.CreateO,
+  },
+  Delete: {
+    I: InviteDelete.DeleteI,
+    O: InviteDelete.DeleteO,
+  },
+  Search: {
+    I: InviteSearch.SearchI,
+    O: InviteSearch.SearchO,
+  },
+  Update: {
+    I: InviteUpdate.UpdateI,
+    O: InviteUpdate.UpdateO,
+  },
+};
+
+// -------------------------------------------------------------------------- //
+
+// -------------------------------------------------------------------------- //
+
 import * as MessageClient from "./pbf/message/ApiServiceClientPb";
 import * as MessageCreate from "./pbf/message/create_pb";
 import * as MessageDelete from "./pbf/message/delete_pb";
