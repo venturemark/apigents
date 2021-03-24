@@ -697,7 +697,8 @@ proto.texupd.CreateI_Obj_Property.prototype.toObject = function(opt_includeInsta
  */
 proto.texupd.CreateI_Obj_Property.toObject = function(includeInstance, msg) {
   var f, obj = {
-    text: jspb.Message.getFieldWithDefault(msg, 1, "")
+    head: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    text: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -736,6 +737,10 @@ proto.texupd.CreateI_Obj_Property.deserializeBinaryFromReader = function(msg, re
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
+      msg.setHead(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
       msg.setText(value);
       break;
     default:
@@ -767,10 +772,17 @@ proto.texupd.CreateI_Obj_Property.prototype.serializeBinary = function() {
  */
 proto.texupd.CreateI_Obj_Property.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getText();
+  f = message.getHead();
   if (f.length > 0) {
     writer.writeString(
       1,
+      f
+    );
+  }
+  f = message.getText();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
       f
     );
   }
@@ -778,10 +790,10 @@ proto.texupd.CreateI_Obj_Property.serializeBinaryToWriter = function(message, wr
 
 
 /**
- * optional string text = 1;
+ * optional string head = 1;
  * @return {string}
  */
-proto.texupd.CreateI_Obj_Property.prototype.getText = function() {
+proto.texupd.CreateI_Obj_Property.prototype.getHead = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -790,8 +802,26 @@ proto.texupd.CreateI_Obj_Property.prototype.getText = function() {
  * @param {string} value
  * @return {!proto.texupd.CreateI_Obj_Property} returns this
  */
-proto.texupd.CreateI_Obj_Property.prototype.setText = function(value) {
+proto.texupd.CreateI_Obj_Property.prototype.setHead = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string text = 2;
+ * @return {string}
+ */
+proto.texupd.CreateI_Obj_Property.prototype.getText = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.texupd.CreateI_Obj_Property} returns this
+ */
+proto.texupd.CreateI_Obj_Property.prototype.setText = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
